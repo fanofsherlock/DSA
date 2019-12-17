@@ -1,3 +1,4 @@
+
 package Array;
 
 import java.io.BufferedWriter;
@@ -5,9 +6,8 @@ import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
 
-public class MaxSubArraySum {
+public class AreConsecutive {
 
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -77,46 +77,53 @@ public class MaxSubArraySum {
 	}
 
 	public static void main(String[] args) throws IOException {
-
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		Reader scan = new Reader();
 		int T = scan.nextInt();
 
-		while (T-- > 0) {
-			int n = scan.nextInt();
-			int[] arr = new int[n];
-			int[] pSum = new int[n];
-			int sum = 0;
+		while (T > 0) {
+			T--;
 
-			int curMax = 0;
-			int totalMax = Integer.MIN_VALUE;
-			int start = 0;
-			int end = -1;
+			int n = scan.nextInt();
+			int[] a = new int[n];
+			int max = Integer.MIN_VALUE;
+			int min = Integer.MAX_VALUE;
 
 			for (int i = 0; i < n; i++) {
-				arr[i] = scan.nextInt();
-				sum += arr[i];
-				pSum[i] = sum;
-
-				curMax = curMax + arr[i];
-				if (curMax > totalMax) {
-					totalMax = curMax;
-					end = i;
+				a[i] = scan.nextInt();
+				if (a[i] > max) {
+					max = a[i];
 				}
-
-				if (curMax < 0) {
-					map.put(pSum[i], sum);
-					curMax = 0;
-					start = i + 1;
-				}
-			} // end
-
-			if (end != -1 && start < end) {
-				for (int i = start; i < end + 1; i++) {
-					System.out.print(arr[i] + " ");
+				if (a[i] < min) {
+					min = a[i];
 				}
 			}
-			System.out.println();
-		}
+
+           boolean areConsecutive=true;
+			if (max - min + 1 == n) {
+				int j;
+				for (int i = 0; i < n; i++) {
+					if (a[i] < 0) {
+						areConsecutive=false;
+						break;
+					} else {
+						j = a[i] - min;
+						a[j]=-1;
+					}
+
+				}
+
+			} else {
+			    areConsecutive=false;
+			}
+			
+			if(areConsecutive){
+			    System.out.println("YES");
+			}else{
+			     System.out.println("NO");
+			}
+
+		} // end of testcases
+
 	}
+
 }
