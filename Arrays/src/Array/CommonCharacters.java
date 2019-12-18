@@ -8,7 +8,6 @@ public class CommonCharacters {
 	public static void main(String[] args) {
 		String[] A = { "cool", "lock", "cook" };
 		System.out.println(commonChars(A));
-		
 	}
 
 	public static List<String> commonChars(String[] A) {
