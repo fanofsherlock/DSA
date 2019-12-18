@@ -98,28 +98,32 @@ public class AreConsecutive {
 				}
 			}
 
-           boolean areConsecutive=true;
+			boolean areConsecutive = true;
+			boolean[] visited = new boolean[n];
+
 			if (max - min + 1 == n) {
 				int j;
 				for (int i = 0; i < n; i++) {
-					if (a[i] < 0) {
-						areConsecutive=false;
-						break;
+
+					j = a[i] - min;
+
+					if (!visited[j]) {
+						visited[j] = true;
 					} else {
-						j = a[i] - min;
-						a[j]=-1;
+						areConsecutive = false;
+						break;
 					}
 
 				}
 
 			} else {
-			    areConsecutive=false;
+				areConsecutive = false;
 			}
-			
-			if(areConsecutive){
-			    System.out.println("YES");
-			}else{
-			     System.out.println("NO");
+
+			if (areConsecutive) {
+				System.out.println("Yes");
+			} else {
+				System.out.println("No");
 			}
 
 		} // end of testcases
