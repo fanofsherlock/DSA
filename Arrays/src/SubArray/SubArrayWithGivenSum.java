@@ -1,5 +1,6 @@
 package SubArray;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SubArrayWithGivenSum {
@@ -45,6 +46,9 @@ public class SubArrayWithGivenSum {
 	        }
 
 		System.out.println("startIndex: " + startIndex + " endIndex: " + endIndex);
+		
+		ArrayList<Integer> arrlist = new ArrayList<Integer>();
+		arrlist.subList(fromIndex, toIndex)
 
 	}
 
