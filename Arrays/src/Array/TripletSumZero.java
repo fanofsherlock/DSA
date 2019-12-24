@@ -60,5 +60,6 @@ public class TripletSumZero {
 		int[] arr = { 0, -1, 2, -3, 1 };
 		System.out.println(findTripletsSorting(arr, arr.length));
 	}
+	
 
 }
