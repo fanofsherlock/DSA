@@ -16,9 +16,14 @@ public class Main {
 		// Construct trie
 		int i;
 		for (i = 0; i < keys.length; i++) {
-			t.insert(keys[i]);
+			t.insert2(keys[i]);
 			System.out.println("\"" + keys[i] + "\"" + "Inserted.");
 		}
+		
+		System.out.println("\n");
+		System.out.println(t.search("the")?output[1]:output[0]);
+		System.out.println(t.search("abc")?output[1]:output[0]);
+		System.out.println(t.search("zarathustra")?output[1]:output[0]);
 	}
 
 }

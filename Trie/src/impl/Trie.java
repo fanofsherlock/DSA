@@ -35,6 +35,28 @@ public class Trie {
 		return true;
 	}
 
+	public void insert2(String key) {
+		if (key == null || key.isEmpty() || key.isBlank()) {
+			return;
+		}
+		insertRecursive(key.toLowerCase(), root, 0);
+	}
+
+	public void insertRecursive(String key, TrieNode current, int i) {
+
+		if (i >= key.length()) {
+			current.markAsLeaf();
+			return;
+		}
+		if (current.children[this.getIndex(key.charAt(i))] == null) {
+			current.children[this.getIndex(key.charAt(i))] = new TrieNode();
+		}
+
+		current = current.children[this.getIndex(key.charAt(i))];
+
+		insertRecursive(key, current, i + 1);
+	}
+
 	public boolean search(String key) {
 		if (key == null || key.isEmpty() || key.isBlank()) {
 			return false;
@@ -52,7 +74,7 @@ public class Trie {
 			current = current.children[index];
 		}
 
-		return true;
+		return current.isEndWord;
 	}
 
 }
