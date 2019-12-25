@@ -7,6 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		// Input keys (use only 'a' through 'z' and lower case)
 		String keys[] = { "the", "a", "there", "answer", "any", "by", "bye", "their", "abc" };
+		
 		String output[] = { "Not present in trie", "Present in trie" };
 		
 		Trie t = new Trie();
@@ -24,6 +25,9 @@ public class Main {
 		System.out.println(t.search("the")?output[1]:output[0]);
 		System.out.println(t.search("abc")?output[1]:output[0]);
 		System.out.println(t.search("zarathustra")?output[1]:output[0]);
+		t.delete("the");
+		t.delete("thespian");
+		System.out.println(t.search("thespian")?output[1]:output[0]);
 	}
 
 }

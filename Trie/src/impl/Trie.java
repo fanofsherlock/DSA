@@ -77,4 +77,79 @@ public class Trie {
 		return current.isEndWord;
 	}
 
+	public boolean delete(String key) {
+		if (key == null || key.isEmpty() || key.isBlank()) {
+			return false;
+		}
+
+		if (this.search(key)) {
+			return delete_helper(key.toLowerCase(), root, key.length(), 0);
+		}
+
+		return false;
+	}
+
+	private boolean delete_helper(String key, TrieNode current, int keylength, int index) {
+		boolean deletedSelf = false;
+
+		if (current == null) {
+			System.out.println("Key doesn't exist");
+			return deletedSelf;
+		}
+
+		if (index == keylength) {
+
+			if (hasNoMoreChildren(current)) {
+				current = null;
+				deletedSelf = true;
+
+			}
+
+			else {
+				current.isEndWord = false;
+				deletedSelf = false;
+			}
+		}
+
+		else {
+			TrieNode childNode = current.children[this.getIndex(key.charAt(index))];
+			boolean childDeleted = delete_helper(key, childNode, keylength, index + 1);
+			if (childDeleted) {
+				childNode = null;
+
+				// Case 2
+				if (current.isEndWord) {
+					deletedSelf = false;
+				}
+				// Case 2
+				else if (!hasNoMoreChildren(current)) {
+					deletedSelf = false;
+				} else {
+					current = null;
+					deletedSelf = true;
+				}
+
+			} else {
+				deletedSelf = false;
+			}
+
+		}
+
+		return deletedSelf;
+	}
+
+	public boolean hasNoMoreChildren(TrieNode current) {
+		if (current == null)
+			return true;
+
+		for (int i = 0; i < 26; i++) {
+			if (current.children[i] != null) {
+				return false;
+			}
+		}
+
+		return true;
+
+	}
+
 }
