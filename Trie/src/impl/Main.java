@@ -3,6 +3,7 @@ package impl;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import problems.IsCombiningWordsPos;
 import problems.ReturnAllWordsSorted;
 
 public class Main {
@@ -13,7 +14,8 @@ public class Main {
 
 		Trie t = new Trie();
 		insertKeys(t, keys);
-		printSorted(t);
+		//printSorted(t);
+		System.out.println(IsCombiningWordsPos.isFormationPossible(keys, "anyby"));
 
 	}
 
@@ -25,7 +27,6 @@ public class Main {
 
 	static void printSorted(Trie t) {
 		ArrayList<String> sortedList = ReturnAllWordsSorted.returnSorted(new ArrayList<String>(), t.root, "");
-
 		for (String string : sortedList) {
 			System.out.println(string);
 		}

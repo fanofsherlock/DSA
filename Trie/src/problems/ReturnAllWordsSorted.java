@@ -10,8 +10,8 @@ public class ReturnAllWordsSorted {
 		if (root == null) {
 			return list;
 		}
-		
-		if(root.isEndWord) {
+
+		if (root.isEndWord) {
 			list.add(s);
 		}
 
@@ -26,4 +26,5 @@ public class ReturnAllWordsSorted {
 
 	}// end of method
 
+	
 }
