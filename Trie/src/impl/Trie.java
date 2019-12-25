@@ -98,14 +98,15 @@ public class Trie {
 		}
 
 		if (index == keylength) {
-
+            
+			//Case 1 or Case 3
 			if (hasNoMoreChildren(current)) {
 				current = null;
 				deletedSelf = true;
 
 			}
 
-			else {
+			else {//Case 2 ("The" is to be deleted, but "Their" also exists in the tree
 				current.isEndWord = false;
 				deletedSelf = false;
 			}
@@ -114,17 +115,21 @@ public class Trie {
 		else {
 			TrieNode childNode = current.children[this.getIndex(key.charAt(index))];
 			boolean childDeleted = delete_helper(key, childNode, keylength, index + 1);
+			
+			//Either Case 1 or Case 3
 			if (childDeleted) {
 				childNode = null;
 
-				// Case 2
+				// Case 3 ("their" was to be deleted, but we also have word "the")
 				if (current.isEndWord) {
 					deletedSelf = false;
 				}
-				// Case 2
+				// Case 3 ("their" was to be delted, but we also have word "themselves")
 				else if (!hasNoMoreChildren(current)) {
 					deletedSelf = false;
-				} else {
+				} 
+				// Case 1 ("their" is to be deleted and there is no other words starting with t in trie
+				else {
 					current = null;
 					deletedSelf = true;
 				}

@@ -2,8 +2,8 @@ package impl;
 
 public class TrieNode {
 
-	TrieNode[] children;
-	Boolean isEndWord;
+	public TrieNode[] children;
+	public Boolean isEndWord;
 
 	public TrieNode() {
 		children = new TrieNode[26];
@@ -19,4 +19,3 @@ public class TrieNode {
 	}
 
 }
-

@@ -1,33 +1,34 @@
 package impl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+
+import problems.ReturnAllWordsSorted;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// Input keys (use only 'a' through 'z' and lower case)
 		String keys[] = { "the", "a", "there", "answer", "any", "by", "bye", "their", "abc" };
-		
-		String output[] = { "Not present in trie", "Present in trie" };
-		
+
 		Trie t = new Trie();
+		insertKeys(t, keys);
+		printSorted(t);
 
-		System.out.println("Keys to insert: " + Arrays.toString(keys) + "\n");
+	}
 
-		// Construct trie
-		int i;
-		for (i = 0; i < keys.length; i++) {
+	static void insertKeys(Trie t, String[] keys) {
+		for (int i = 0; i < keys.length; i++) {
 			t.insert2(keys[i]);
-			System.out.println("\"" + keys[i] + "\"" + "Inserted.");
 		}
-		
-		System.out.println("\n");
-		System.out.println(t.search("the")?output[1]:output[0]);
-		System.out.println(t.search("abc")?output[1]:output[0]);
-		System.out.println(t.search("zarathustra")?output[1]:output[0]);
-		t.delete("the");
-		t.delete("thespian");
-		System.out.println(t.search("thespian")?output[1]:output[0]);
+	}
+
+	static void printSorted(Trie t) {
+		ArrayList<String> sortedList = ReturnAllWordsSorted.returnSorted(new ArrayList<String>(), t.root, "");
+
+		for (String string : sortedList) {
+			System.out.println(string);
+		}
 	}
 
 }
