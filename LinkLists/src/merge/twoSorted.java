@@ -63,7 +63,6 @@ public class twoSorted {
 		while (head1 != null && head2 != null) {
 
 			if (head1.data > head2.data) {
-
 				if (tail.data != head2.data) {
 					tail.next = head2;
 					tail=tail.next;
