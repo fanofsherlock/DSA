@@ -7,7 +7,7 @@ import java.util.List;
 
 public class LargestNumber {
 
-	// DO NOT MODIFY THE LIST. IT IS READ ONLY
+
 	public static String largestNumber(final List<Integer> A) {
 
 		ArrayList<Integer> arr = new ArrayList<Integer>(A);
