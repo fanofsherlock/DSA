@@ -8,8 +8,8 @@ import java.util.List;
 public class TripletsAllProblems {
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 3, 4, 15, 19 };
-		countTriplets(arr, arr.length);
+		int arr[] = { -1, 4, 2, 1, 3 };
+		System.out.println(SumSmallerThanTargetNumber(arr, 5));
 	}
 
 	// count all triplets such that sum of two numbers is also present in the array
@@ -69,8 +69,7 @@ public class TripletsAllProblems {
 		}
 	}
 
-	
-	
+	// Sum closest to a target number
 	public static int SumClosestToTargetNumber(int[] arr, int targetSum) {
 		if (arr == null || arr.length < 3) {
 			new IllegalArgumentException();
@@ -105,6 +104,42 @@ public class TripletsAllProblems {
 			}
 		}
 		return minSum;
+	}
+
+	// Sum smaller than target number
+	public static int SumSmallerThanTargetNumber(int[] arr, int target) {
+		if (arr == null || arr.length < 3) {
+			new IllegalArgumentException();
+		}
+
+		Arrays.sort(arr);
+
+		int count = 0;
+		int diff = 0;
+		int start = 1, end = arr.length - 1;
+
+		for (int i = 0; i < arr.length - 2; i++) {
+			if (arr[i] > target) {
+				break;
+			}
+			start = i + 1;
+			end = arr.length - 1;
+
+			//{ -1, 1, 2, 3, 4 };
+			while (start < end) {
+				diff = target - (arr[start] + arr[end] + arr[i]);
+
+				// incrementing both since incrementing one won't have any affect
+				if (diff > 0) {
+					count = count + (end - start);//for that start Index
+					start++;
+				} else {
+					end--;
+				}
+
+			}
+		}
+		return count;
 	}
 
 }

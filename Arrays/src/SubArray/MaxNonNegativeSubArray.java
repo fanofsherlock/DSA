@@ -48,7 +48,7 @@ public class MaxNonNegativeSubArray {
 	            
 	        } 
 	        
-	        L
+	        
 	        
 	        return list;
 	    }

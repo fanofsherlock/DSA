@@ -48,7 +48,6 @@ public class SubArrayWithGivenSum {
 		System.out.println("startIndex: " + startIndex + " endIndex: " + endIndex);
 		
 		ArrayList<Integer> arrlist = new ArrayList<Integer>();
-		arrlist.subList(fromIndex, toIndex)
 
 	}
 
