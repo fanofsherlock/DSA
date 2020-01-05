@@ -26,44 +26,39 @@ public class TokenBucketFilter {
 		} else {
 			refillGreedily();
 		}
-		System.out.println("Granting token to thread :" + Thread.currentThread().getName() + " at "
-				+ System.currentTimeMillis() + "\nTokens left :" + availTokens);
+		
+		if (availTokens >= 1) {
+			availTokens--;
+			lastRequest = System.currentTimeMillis();
+			System.out.println("Granting token to thread :" + Thread.currentThread().getName() + " at "
+					+ System.currentTimeMillis() + "\nTokens left :" + availTokens);
+		} 
+		else {
+			//You can either let the thread wait or die
+			//Thread.sleep(1000);
+		}
+
+		
 	}
 
-	 void refillIntervally() throws InterruptedException {
+	void refillIntervally() throws InterruptedException {
 		long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
 
-		if (elapsedTime >= MAX_TOKENS) {
+		if (elapsedTime >= tokenDurationPeriod) {
 			availTokens = MAX_TOKENS;
-		} else {
-			availTokens = elapsedTime;
 		}
-
-		if (availTokens > 1) {
-			availTokens--;
-		} else {
-			Thread.sleep(1000);
-		}
-
-		lastRequest = System.currentTimeMillis();
+		
 	}
 
 	synchronized void refillGreedily() throws InterruptedException {
 		long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
 
-		if (elapsedTime >= MAX_TOKENS) {
+		if (elapsedTime >= tokenDurationPeriod) {
 			availTokens = MAX_TOKENS;
 		} else {
-			availTokens = elapsedTime;
+			availTokens += Math.min(MAX_TOKENS, elapsedTime * (MAX_TOKENS / tokenDurationPeriod));
 		}
 
-		if (availTokens > 1) {
-			availTokens--;
-		} else {
-			Thread.sleep(1000);
-		}
-
-		lastRequest = System.currentTimeMillis();
 	}
 
 	public static void main(String[] args) {
