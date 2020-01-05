@@ -4,7 +4,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class TokenBucketFilter {
+public class TokenBucketFilterFIFO {
 
 	private long MAX_TOKENS = 0;
 	private long availTokens = 0;
@@ -12,10 +12,12 @@ public class TokenBucketFilter {
 	private long tokenDurationPeriod = 0;
 	private boolean refillIntervally = true;
 	private Object tokenLock = new Object();
+	private ArrayBlockingQueue<Boolean> queue;
 
-	public TokenBucketFilter(long maxTokens, long tokenDurationSeconds) {
+	public TokenBucketFilterFIFO(long maxTokens, long tokenDurationSeconds) {
 		MAX_TOKENS = maxTokens;
 		this.tokenDurationPeriod = tokenDurationSeconds;
+		queue = new ArrayBlockingQueue<Boolean>(Long.valueOf(MAX_TOKENS).intValue());
 	}
 
 	public void setRefillTypeGreedy() {
@@ -25,24 +27,13 @@ public class TokenBucketFilter {
 	void tryConsume() throws InterruptedException {
 
 		synchronized (tokenLock) {
-
-			if (refillIntervally) {
-				refillIntervally();
-			} else {
-				refillGreedily();
-			}
-
-			if (availTokens >= 1) {
-				availTokens--;
-				lastRequest = System.currentTimeMillis();
-				System.out.println("Granting token to thread :" + Thread.currentThread().getName() + " at "
-						+ System.currentTimeMillis() + "\nTokens left :" + availTokens);
-			} else {
-				// You can either let the thread wait or die
-				Thread.sleep(1000);
-			}
-
+			refillIntervally();
+			lastRequest = System.currentTimeMillis();
 		}
+
+		queue.take();
+		System.out.println("Granting token to thread :" + Thread.currentThread().getName() + " at "
+				+ System.currentTimeMillis() + "\nTokens left :" + availTokens);
 
 	}
 
@@ -50,7 +41,9 @@ public class TokenBucketFilter {
 		long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
 
 		if (elapsedTime >= tokenDurationPeriod) {
-			availTokens = MAX_TOKENS;
+			while (queue.size() < MAX_TOKENS) {
+				queue.add(true);
+			}
 		}
 
 	}
@@ -59,9 +52,14 @@ public class TokenBucketFilter {
 		long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
 
 		if (elapsedTime >= tokenDurationPeriod) {
-			availTokens = MAX_TOKENS;
+			while (queue.size() < MAX_TOKENS) {
+				queue.add(true);
+			}
 		} else {
 			availTokens += Math.min(MAX_TOKENS, elapsedTime * (MAX_TOKENS / tokenDurationPeriod));
+			while (queue.size() < availTokens) {
+				queue.add(true);
+			}
 		}
 
 	}
