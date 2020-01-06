@@ -1,4 +1,4 @@
-package basic;
+package Basic;
 
 import java.io.BufferedWriter;
 import java.io.DataInputStream;

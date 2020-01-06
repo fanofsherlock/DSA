@@ -14,7 +14,7 @@ public class SubsetsOfAString {
 
 	private static void printPerm(String s, int index, String last) {
 		if (index > s.length() - 1) {
-			System.out.print("*" + last + "* ");
+			System.out.print("-" + last + "-");
 			return;
 		}
 		printPerm(s, index + 1, last);
