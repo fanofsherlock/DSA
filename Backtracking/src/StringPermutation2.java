@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-public class StringPermutation {
+public class StringPermutation2 {
 
 	public List<String> permute(char input[]) {
 		Map<Character, Integer> countMap = new TreeMap<>();
@@ -57,7 +57,7 @@ public class StringPermutation {
 	}
 
 	public static void main(String args[]) {
-		StringPermutation sp = new StringPermutation();
+		StringPermutation2 sp = new StringPermutation2();
 		sp.permute("AABC".toCharArray()).forEach(s -> System.out.println(s));
 	}
 }

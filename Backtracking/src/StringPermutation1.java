@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Permutations {
+public class StringPermutation1 {
 
 	static List<List<Integer>> result = new ArrayList<>();;
 
