@@ -17,15 +17,24 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-
 public class Streams {
 
 	public static void main(String[] args) {
 
 		// GENERATING, BUILDING and STREAMING COLLECITONS
 		IntStream.rangeClosed(1, 10).parallel().forEachOrdered(System.out::println);
+		
+		String[] arr = new String[] { "a", "b", "c" };
+		ArrayList<String> alist = new ArrayList<String>();
+		Arrays.stream(arr).forEach(s -> alist.add(s));
+		for (String s : alist) {
+			System.out.println(s);
+		}
 
+		
+		
 		System.exit(1);
+
 		// generating
 		Stream.generate(() -> Math.random());
 		Stream.iterate(0, i -> i + 2);
