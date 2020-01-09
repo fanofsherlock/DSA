@@ -31,7 +31,6 @@ public class AllMaps {
 
 		Map<String, Integer> map2 = Collections.synchronizedMap(map);
 		map2.put("", 1);
-
 	}
 
 	public static void TestNavMap() {

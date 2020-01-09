@@ -12,4 +12,22 @@ public class GenericMethods {
 		return max;
 	}
 
+	public static void main(String[] args) {
+
+		int x = 2;
+		switch (x) {
+		case 1:
+		case 2:
+			break;
+		case 3:
+			System.out.println("First statement");
+			break;
+		case 4:
+			System.out.println("Second statement");
+		default:
+			System.out.println("Default statement");
+			break;
+		}
+	}
+
 }
