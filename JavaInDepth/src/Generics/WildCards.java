@@ -23,7 +23,6 @@ public class WildCards {
 		Queue<String> q = new LinkedList<String>();
 		q.add("a");
 		printCollections2(set);
-		printCollections2(q);
 
 	}
 
@@ -57,16 +56,6 @@ public class WildCards {
 
 	// wildcard for everything
 	static void printCollections3(Collection<?> c) {
-		for (Object o : c) {
-
-		}
-		Iterator i = c.iterator();
-		while (i.hasNext()) {
-			System.out.println(i.next().toString());
-		}
-	}
-	
-	static void printCollections3( c) {
 		for (Object o : c) {
 
 		}

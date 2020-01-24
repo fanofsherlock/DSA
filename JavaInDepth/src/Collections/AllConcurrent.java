@@ -22,7 +22,7 @@ public class AllConcurrent {
 		ConcurrentSkipListSet<Integer> set = new ConcurrentSkipListSet<Integer>();
 		set.add(21);
 		
-		CopyOnWriteArraySet<Integer> set = new CopyOnWriteArraySet<Integer>();
+		CopyOnWriteArraySet<Integer> set2 = new CopyOnWriteArraySet<Integer>();
 
 	}
 
