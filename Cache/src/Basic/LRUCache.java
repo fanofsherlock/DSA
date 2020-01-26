@@ -33,7 +33,6 @@ public class LRUCache {
 			}
 		} else {
 			dq.remove(x);
-
 		}
 
 		dq.add(x);

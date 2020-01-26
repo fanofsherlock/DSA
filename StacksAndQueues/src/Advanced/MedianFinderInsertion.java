@@ -8,6 +8,10 @@ public class MedianFinderInsertion {
 	static LinkedList<Integer> list = new LinkedList<Integer>();
 
 	public static void addNum(int num) {
+		if (list.size() == 0) {
+			list.add(num);
+			return;
+		}
 		int i = 0;
 		int current = 0;
 		while (i < list.size()) {
@@ -39,7 +43,7 @@ public class MedianFinderInsertion {
 
 	public static void main(String args[]) {
 		addNum(4);
-		System.out.println(findMedian());
+		//System.out.println(findMedian());
 		addNum(8);
 		System.out.println(findMedian());
 		addNum(2);

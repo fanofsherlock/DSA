@@ -2,11 +2,9 @@ package Synchronization;
 
 public class Synchronization {
 
-	// to make static data thread-safe
-	// you use class level synchronisation
-
-	// to make instance level date threadsafe
-	// you use object level synchornization
+	// to make static data thread-safe, you use class level Synchronisation
+	// to make instance level date thread-safe, you use object level Synchornization
+	
 
 	private static Object lock1 = new Object();
 
@@ -48,7 +46,8 @@ public class Synchronization {
 
 		synchronized (lock1) {
 			System.out.println(Thread.currentThread().getName() + " has the lock!");
-			Thread.currentThread().wait();
+			Thread.currentThread().wait();  
+			//This will cause the thread to wait with the lock until it is notified. 
 			System.out.println(Thread.currentThread().getName() + " exiting the lock!");
 			System.out.println();
 		}
