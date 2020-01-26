@@ -24,43 +24,40 @@ public class TokenBucketFilter {
 	void tryConsume() throws InterruptedException {
 
 		synchronized (tokenLock) {
-
-			if (refillIntervally) {
-				refillIntervally();
-			} else {
-				refillGreedily();
+			refillGreedily();
+			while (availTokens == 0) {
+				tokenLock.wait();
 			}
-
-			if (availTokens >= 1) {
-				availTokens--;
-				lastRequest = System.currentTimeMillis();
-				System.out.println("Granting token to thread :" + Thread.currentThread().getName() + " at "
-						+ System.currentTimeMillis() + "\nTokens left :" + availTokens);
-			} else {
-				// You can either let the thread wait or die
-				Thread.sleep(1000);
-			}
-
+			tokenLock.notifyAll();
+			availTokens--;
+			lastRequest = System.currentTimeMillis();
+			System.out.println("Granting token to thread :" + Thread.currentThread().getName() + " at "
+					+ System.currentTimeMillis() + "\nTokens left :" + availTokens);
 		}
 
 	}
 
 	void refillIntervally() throws InterruptedException {
-		long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
 
-		if (elapsedTime >= tokenDurationPeriod) {
-			availTokens = MAX_TOKENS;
+		synchronized (tokenLock) {
+			long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
+
+			if (elapsedTime >= tokenDurationPeriod) {
+				availTokens = MAX_TOKENS;
+			}
 		}
 
 	}
 
 	synchronized void refillGreedily() throws InterruptedException {
-		long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
+		synchronized (tokenLock) {
+			long elapsedTime = (System.currentTimeMillis() - lastRequest) / 1000;
 
-		if (elapsedTime >= tokenDurationPeriod) {
-			availTokens = MAX_TOKENS;
-		} else {
-			availTokens += Math.min(MAX_TOKENS, elapsedTime * (MAX_TOKENS / tokenDurationPeriod));
+			if (elapsedTime >= tokenDurationPeriod) {
+				availTokens = MAX_TOKENS;
+			} else {
+				availTokens += Math.min(MAX_TOKENS, elapsedTime * (MAX_TOKENS / tokenDurationPeriod));
+			}
 		}
 
 	}
@@ -70,10 +67,12 @@ public class TokenBucketFilter {
 		TokenBucketFilter t = new TokenBucketFilter(5, 2);
 
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
+		es.execute(new Filler(t));
 
 		for (int i = 0; i < 10; i++) {
 			es.execute(new TokenUser(t));
@@ -101,6 +100,26 @@ public class TokenBucketFilter {
 
 		}
 
+	}
+
+	static class Filler implements Runnable {
+
+		private TokenBucketFilter t;
+
+		public Filler(TokenBucketFilter t) {
+			this.t = t;
+		}
+
+		@Override
+		public void run() {
+			while (true) {
+				try {
+					t.refillGreedily();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 }
