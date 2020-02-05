@@ -11,7 +11,6 @@ public class ThreadPool {
 	private List<PoolThread> threads = new ArrayList<PoolThread>();
 	private boolean isStopped = false;
 
-	
 	public ThreadPool(int noOfThreads, int maxNoOfTasks) {
 		taskQueue = new BlockingQueue(maxNoOfTasks);
 
