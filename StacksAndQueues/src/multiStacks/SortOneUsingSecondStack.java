@@ -11,7 +11,7 @@ class TwoStack {
   }
 }
 
-public class TwoStacks
+public class SortOneUsingSecondStack
 {
     // sq is the object of class TwoStack
     /* The method push to push element into the stack 2 */
