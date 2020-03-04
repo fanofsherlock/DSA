@@ -56,6 +56,17 @@ public class algosOfRotation {
 			printArr(arr);
 		}
 	}
+	
+	
+	public static int[] rotateLeft(int[] arr, int k) {
+	    List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+	    
+	    Collections.reverse(list.subList(0,k));
+	    Collections.reverse(list.subList(k,list.size()));
+	    Collections.reverse(list.subList(0,list.size()));
+	    
+	    return list.parallelStream().mapToInt(e->e).toArray();
+	}
 
 	private static void method3(int[] arr) {
 
