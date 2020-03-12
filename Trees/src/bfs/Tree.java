@@ -127,6 +127,8 @@ public class Tree {
 			}
 
 		}
+		
+		
 
 		return 0;
 
@@ -142,8 +144,9 @@ public class Tree {
 		int nodeCount = currentLevel.size();
 		currentLevel.push(root);
 
+		
 		while (!currentLevel.isEmpty()) {
-
+          
 			nodeCount = currentLevel.size();
 
 			for (int i = 0; i < nodeCount; i++) {
