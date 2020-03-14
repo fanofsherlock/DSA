@@ -2,37 +2,81 @@ package Collections;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
 import java.util.TreeMap;
+import java.util.WeakHashMap;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 public class AllMaps {
 
 	public static void main(String[] args) {
 		TestHashMap();
+		TestTreeMap();
+		TestConcurrentHashMap();
+		TestConcurrentSkipListMap();
 		TestNavMap();
+		TestIdentityMap();
+		TestWeakHashMAp();
+	}
+
+	// A concurrent Sorted Map (All sorted collections always implement a navigable
+	// interface
+	private static void TestConcurrentSkipListMap() {
+		ConcurrentSkipListMap<String, String> skipMap = new ConcurrentSkipListMap<String, String>(
+				(a, b) -> a.compareTo(b));
+		skipMap.put("", "");
+
+	}
+
+	private static void TestTreeMap() {
+		TreeMap<String, String> tMap = new TreeMap<String, String>((a, b) -> a.compareTo(b));
+		tMap.put("", "");
+
+	}
+
+	private static void TestConcurrentHashMap() {
+		ConcurrentHashMap<String, String> cMap = new ConcurrentHashMap<String, String>();
+		cMap.put("", "");
+
+	}
+
+	private static void TestWeakHashMAp() {
+		WeakHashMap<String, String> wMap = new WeakHashMap<String, String>();
+		wMap.put("a", "A");
+
+	}
+
+	private static void TestIdentityMap() {
+		IdentityHashMap<String, String> iMap = new IdentityHashMap<String, String>();
+		iMap.put("", "");
+
 	}
 
 	public static void TestHashMap() {
+
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 
-		Integer[] ints = new Integer[] { 1, 2, 3, 1, 1, 3 };
+		map.compute(String.valueOf(1), (k, v) -> {
+			if (v == null) {
+				return 1;
+			} else {
+				return v + 1;
+			}
+		});
 
-		for (Integer i : ints) {
-			map.compute(String.valueOf(i), (k, v) -> {
-				if (v == null) {
-					return 1;
-				} else {
-					return v + 1;
-				}
-			});
-		}
+		map.putIfAbsent("", 1);
+		map.getOrDefault("", 0);
 
 		Map<String, Integer> map2 = Collections.synchronizedMap(map);
 		map2.put("", 1);
 	}
 
+	// Navigable Map =Just Like Deque interface
+	// TreeMap implements this Navigable Map
 	public static void TestNavMap() {
 		NavigableMap<String, Integer> map = new TreeMap<String, Integer>((s1, s2) -> s1.compareTo(s2));
 		map.put("a", 1);

@@ -15,13 +15,19 @@ public class BlockingQueue<T> {
 
 		synchronized (queue) {
 
+			// Blocking Queue Function
 			while (size == limit) {
 				wait();
 			}
-
+			// Queue Function
 			queue[++tail] = item;
 			size++;
-			// Notify other threads which were waiting for Dequeuing
+
+			// Optimized Blocking Queue Function
+			// If this statement was not here, then only those threads
+			// would be notified which are in this synchronization queue
+			// instead of the threads which are also waiting for the lock on queue
+			// but which are in the Dq synchronization Queue
 			if (size == 1) {
 				notifyAll();
 			}
@@ -31,24 +37,26 @@ public class BlockingQueue<T> {
 	public Object dequeue() throws InterruptedException {
 
 		synchronized (queue) {
-
+			// Blocking Queue Function
 			while (size == 0) {
 				wait();
 			}
 
+			// Queue Function
 			T item = queue[head];
 			head++;
 			size--;
 
-			// Notify threads waiting for Enqueuing
-			if (size == limit) {
+			//// Optimized Blocking Queue Function
+			if (size == limit - 1) {
 				notifyAll();
 			}
 			return item;
 		}
 	}
 
-	
-	
-	
+	public Boolean isEmpty() {
+		return size == 0 ? true : false;
+	}
+
 }
