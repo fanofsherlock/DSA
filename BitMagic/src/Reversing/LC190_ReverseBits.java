@@ -30,7 +30,7 @@ public class LC190_ReverseBits {
 	public static void main(String[] args) {
 		String s = "11111111111111111111111111111101";
 		System.out.println(s.length());
-		int[] c = reverseBits(4294967293);
+		//int[] c = reverseBits(4294967293);
 	}
 
 }
