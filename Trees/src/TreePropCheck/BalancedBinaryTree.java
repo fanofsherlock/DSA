@@ -1,5 +1,5 @@
 package TreePropCheck;
-public class TreeProperty {
+public class BalancedBinaryTree {
 
 	static class TreeNode {
 		int val;
