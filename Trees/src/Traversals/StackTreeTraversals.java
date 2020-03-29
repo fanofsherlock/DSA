@@ -85,6 +85,7 @@ public class StackTreeTraversals {
 		}
 	}
 
+	
 	public static void main(String[] args) {
 		Node<Integer> root = new Node<Integer>(7);
 		root.left = new Node<Integer>(5);
