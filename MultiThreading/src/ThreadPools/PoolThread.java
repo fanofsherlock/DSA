@@ -1,13 +1,13 @@
 package ThreadPools;
 
-import DataStructure.BlockingQueue;
+import DataStructure.BlockingQueueSync;
 
 public class PoolThread extends Thread {
 
-	private BlockingQueue<Runnable> taskQueue = null;
+	private BlockingQueueSync<Runnable> taskQueue = null;
 	private boolean isStopped = false;
 
-	public PoolThread(BlockingQueue queue) {
+	public PoolThread(BlockingQueueSync queue) {
 		taskQueue = queue;
 	}
 

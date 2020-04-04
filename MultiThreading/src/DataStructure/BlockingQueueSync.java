@@ -1,12 +1,12 @@
 package DataStructure;
 
-public class BlockingQueue<T> {
+public class BlockingQueueSync<T> {
 
 	private T[] queue;
 	private int limit = 10;
 	int head = 0, tail = 0, size = 0;
 
-	public BlockingQueue(int limit) {
+	public BlockingQueueSync(int limit) {
 		this.limit = limit;
 		this.queue = (T[]) new Object[limit];
 	}

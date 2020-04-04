@@ -3,16 +3,16 @@ package ThreadPools;
 import java.util.ArrayList;
 import java.util.List;
 
-import DataStructure.BlockingQueue;
+import DataStructure.BlockingQueueSync;
 
 public class ThreadPool {
 
-	private BlockingQueue<Runnable> taskQueue = null;
+	private BlockingQueueSync<Runnable> taskQueue = null;
 	private List<PoolThread> threads = new ArrayList<PoolThread>();
 	private boolean isStopped = false;
 
 	public ThreadPool(int noOfThreads, int maxNoOfTasks) {
-		taskQueue = new BlockingQueue(maxNoOfTasks);
+		taskQueue = new BlockingQueueSync(maxNoOfTasks);
 
 		for (int i = 0; i < noOfThreads; i++) {
 			threads.add(new PoolThread(taskQueue));
