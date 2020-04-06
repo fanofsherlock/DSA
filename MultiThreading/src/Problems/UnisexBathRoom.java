@@ -70,32 +70,29 @@ public class UnisexBathRoom {
 		while (malesPresent != 0) {
 			wait();
 		}
-
 		bathRoomUsers.acquire();
 		femalesPresent++;
 	}
-
 	public synchronized void femalesGettingOut() throws InterruptedException {
 		bathRoomUsers.release();
 		femalesPresent--;
 		notifyAll();
 	}
-
 	public synchronized void malesGettingIn() throws InterruptedException {
 		while (femalesPresent != 0) {
 			wait();
 		}
-
 		bathRoomUsers.acquire();
 		malesPresent++;
 	}
-
 	public synchronized void malesGettingOut() throws InterruptedException {
 		bathRoomUsers.release();
 		malesPresent--;
 		notifyAll();
 	}
 
+	
+	
 	public static void main(String[] args) throws InterruptedException {
 		UnisexBathRoom bathRoom = new UnisexBathRoom(3);
 		Thread F1 = new Thread(new Females(1, bathRoom));
