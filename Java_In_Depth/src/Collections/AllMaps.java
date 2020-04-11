@@ -29,6 +29,7 @@ public class AllMaps {
 		ConcurrentSkipListMap<String, String> skipMap = new ConcurrentSkipListMap<String, String>(
 				(a, b) -> a.compareTo(b));
 		skipMap.put("", "");
+		skipMap.forEach((k,v)->System.out.println(k));
 
 	}
 
@@ -67,10 +68,18 @@ public class AllMaps {
 				return v + 1;
 			}
 		});
+		
+		map.computeIfAbsent("1", k->1);
+		map.computeIfPresent("1", (k,v)->v+1);
 
-		map.putIfAbsent("", 1);
+		
+		
+		map.putIfAbsent("", 
+				
+				1);
+		
 		map.getOrDefault("", 0);
-
+		map.replaceAll((key,value)-> value);
 		Map<String, Integer> map2 = Collections.synchronizedMap(map);
 		map2.put("", 1);
 	}

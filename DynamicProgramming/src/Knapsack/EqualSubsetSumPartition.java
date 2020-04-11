@@ -25,7 +25,7 @@ public class EqualSubsetSumPartition {
 
 		if (curSum == total) {
 			return true;
-		}
+		
 
 		if (dp[curIndex][curSum] != null) {
 			return dp[curIndex][curSum];
