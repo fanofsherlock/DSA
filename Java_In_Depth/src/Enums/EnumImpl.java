@@ -33,12 +33,10 @@ public enum EnumImpl implements PrintInterface {
 
 	public static void main(String[] args) {
 		EnumImpl e = EnumImpl.Instance1;
-		e.printId();
 		e.printConstantName();
 		e.print("implements PrintInterface");
 
 		EnumImpl e2 = EnumImpl.Instance2;
-		e2.printId();
 		e2.printConstantName();
 		e2.print("implements PrintInterface");
 	}
