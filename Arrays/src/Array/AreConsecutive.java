@@ -88,6 +88,7 @@ public class AreConsecutive {
 			int max = Integer.MIN_VALUE;
 			int min = Integer.MAX_VALUE;
 
+			// find max and min
 			for (int i = 0; i < n; i++) {
 				a[i] = scan.nextInt();
 				if (a[i] > max) {
@@ -98,13 +99,15 @@ public class AreConsecutive {
 				}
 			}
 
+			
+			
 			boolean areConsecutive = true;
 			boolean[] visited = new boolean[n];
 
+			//baselining
 			if (max - min + 1 == n) {
 				int j;
 				for (int i = 0; i < n; i++) {
-
 					j = a[i] - min;
 
 					if (!visited[j]) {
@@ -113,13 +116,14 @@ public class AreConsecutive {
 						areConsecutive = false;
 						break;
 					}
-
 				}
 
 			} else {
 				areConsecutive = false;
 			}
 
+			
+			
 			if (areConsecutive) {
 				System.out.println("Yes");
 			} else {

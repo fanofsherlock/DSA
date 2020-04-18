@@ -21,6 +21,8 @@ public class DemoModule1SingleExample {
         // My synchronization magic.  Let's keep this thread from exiting
         // until all of our test code has executed.
         GateBasedSynchronization gate = new GateBasedSynchronization();
+        
+    
 
         // Create an Observable<String> that contains the 24 greek letters.
         Single<String> targetObservable = Observable.fromArray(GreekAlphabet.greekLetters)
@@ -61,6 +63,6 @@ public class DemoModule1SingleExample {
 
         // Wait for either "onSuccess" or "onError" to be called.
         gate.waitForAny("onSuccess", "onError");
-
+        System.exit(0);
     }
 }

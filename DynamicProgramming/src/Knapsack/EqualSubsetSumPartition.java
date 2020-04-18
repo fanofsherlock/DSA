@@ -25,7 +25,7 @@ public class EqualSubsetSumPartition {
 
 		if (curSum == total) {
 			return true;
-		
+		}
 
 		if (dp[curIndex][curSum] != null) {
 			return dp[curIndex][curSum];
@@ -38,15 +38,13 @@ public class EqualSubsetSumPartition {
 			resSelected = Knapsack(nums, total, curIndex + 1, curSum + nums[curIndex], dp);
 		}
 
-		resNotSelected = Knapsack(nums,total, curIndex + 1, curSum, dp);
+		resNotSelected = Knapsack(nums, total, curIndex + 1, curSum, dp);
 
 		dp[curIndex][curSum] = resSelected || resNotSelected;
+
 		return dp[curIndex][curSum];
 	}
 
-	
-	
-	
 	public static void main(String[] args) {
 		EqualSubsetSumPartition eq = new EqualSubsetSumPartition();
 		int[] a = new int[] { 1, 2, 5 };

@@ -9,13 +9,11 @@ public class FibonacciSequence {
     public static Observable<Long> create(final long totalNumbers) {
 
         return Observable.create(emitter -> {
-
             long count = 0;
             long previousValue1 = 1;
             long previousValue2 = 1;
 
             while( count < totalNumbers ) {
-
                 if( emitter.isDisposed() ) {
                     break;
                 }
@@ -26,12 +24,10 @@ public class FibonacciSequence {
                     emitter.onNext(0L);
                     continue;
                 }
-
                 if( count == 2 ) {
                     emitter.onNext(1L);
                     continue;
                 }
-
                 long newValue = previousValue1 + previousValue2;
                 emitter.onNext(newValue);
 
@@ -44,10 +40,10 @@ public class FibonacciSequence {
             }
         });
 
+        
     }
 
     public static Long[] toArray( int totalNumbers ) {
-
         return create(totalNumbers)
                 .collectInto(new ArrayList<Long>(totalNumbers), (collectionTarget, nextValue) -> collectionTarget.add(nextValue))
                 .blockingGet()
@@ -55,6 +51,7 @@ public class FibonacciSequence {
 
     }
 
+    
     public static ArrayList<Long> toArrayList( int totalNumbers ) {
         return create(totalNumbers)
                 .collectInto(new ArrayList<Long>(totalNumbers), (collectionTarget, nextValue) -> collectionTarget.add(nextValue))

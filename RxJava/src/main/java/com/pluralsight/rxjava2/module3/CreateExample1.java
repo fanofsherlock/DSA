@@ -18,8 +18,7 @@ public class CreateExample1 {
         // Create a geometric sequence that is highly recognizable and emit it without
         // modifying the thread information.  This will cause everything to run on the
         // Java 'main' thread.
-        Observable<Integer> geometricSequence1 = createGeometricSequence(1, 2, 8);
-        geometricSequence1.subscribe(new DemoSubscriber<>());
+        
 
 
         log.info("");
@@ -32,12 +31,16 @@ public class CreateExample1 {
 
         // Create a new geometric sequence.
         Observable<Integer> geometricSequence2 = createGeometricSequence(3, 3, 6);
-
-        // This time we set subscribeOn to the RxJava computation scheduler.
+        Observable<Integer> geometricSequence1 = createGeometricSequence(1, 2, 8);
+        
+        geometricSequence1.subscribe(new DemoSubscriber<>());
+        
         geometricSequence2
                 .subscribeOn(Schedulers.computation())
                 .subscribe(new DemoSubscriber<>(gate, "onComplete", "onError"));
 
+        
+        
         // Because we have work being done on a thread other than 'main',
         // we must wait for the subscriber to finish consuming the geometric stream.
         gate.waitForAny("onComplete", "onError");
@@ -45,6 +48,9 @@ public class CreateExample1 {
         System.exit(0);
     }
 
+    
+    
+    
     private static Observable<Integer> createGeometricSequence(final int start, final int multiplier, final int totalNumbers) {
 
         // Validate the incoming parameters.  No geometric multiplication based
@@ -53,41 +59,36 @@ public class CreateExample1 {
             throw new IllegalArgumentException("start parameter must be non-zero");
         }
 
+        
+        
+        
         // Create an observable.
         return Observable.create(emitter -> {
 
-            // emitter provides us with the mechanism to generate the
-            // onNext, onError, and onComplete events.
-
+            // Emitter lambda generates onNext, onError, and onComplete events.
             int count = 0;
             int currentValue = start;
 
             while(count < totalNumbers) {
 
-                // First, we make sure that the subscriber has not
-                // cancelled the subscription.
+                // Check if subscriber has cancelled the subscription.
                 if( emitter.isDisposed()) {
                     break;
                 }
 
                 ++count;
 
-                // Emit the currently calculated
-                // value of the geometric sequence.
+                // Emit the current value
                 emitter.onNext(currentValue);
 
                 // Calculate the next value in the sequence.
                 currentValue = currentValue * multiplier;
             }
 
-            // If the subscription has been cancelled, then we must
-            // NOT call onComplete since that would be outside of the
-            // normal Observable contract.
+            // If the subscription has been cancelled, 
+            // When we reach the end of elements to be emitted we call OnComplete
+            
             if( !emitter.isDisposed()) {
-
-                // ...but in this case, the subscription is still good
-                // and we are at the end of the requested number sequence.
-                // Issue an onComplete event.
                 emitter.onComplete();
             }
         });
