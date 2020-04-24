@@ -20,13 +20,37 @@ public class BlockingQueueSemaphore<T> {
 	public void enQ(T data) {
 
 		try {
-			prodSemaphore.acquire();
+			do {
+				prodSemaphore.acquire();
+			} while (tail > capacity - 1);
+
+			backingArray[tail++] = data;
+
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			conSemaphore.release();
 		}
 
+	}
+
+	public T dQ() {
+		T data =null;
+		
+		try {
+			do {
+				conSemaphore.acquire();
+			} while (tail<0);
+
+			data =backingArray[tail--];
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			prodSemaphore.release();
+		}
+
+
+		return data;
 	}
 }

@@ -22,7 +22,11 @@ public class Streams {
 
 	public static void main(String[] args) {
 
-
+        List<Integer> l = Arrays.asList(new Integer[] {1,2,3});
+        l.add(200);
+		
+        
+		
 		// Boolean Property Check
 		List<String> list = new ArrayList<String>();
 		System.out.println(list.stream().anyMatch(s -> s.length() > 1));

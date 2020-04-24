@@ -1,0 +1,37 @@
+// Number of floors - 10
+// Lift - 1
+// No hard requirement on wait time
+
+currently - 5 u
+6 d 
+8 u
+1 u
+3 d
+7 u  //goingUp(SEVENTH,VALUE-1)
+
+
+
+O(m*N)
+N - number of strings in the array
+m - m is the average size of a string in the array
+
+//["abc","cba","cab","xyz", "zyx"]
+// abc, abc, abc , xyz
+LinkedHashMap<String,List<String>> 
+abc, [abc, cba, cab] 
+xyz, [xyz,zyx];
+
+
+result=new ArrayList<String>();
+result.addAll(e.getValue());
+
+
+
+
+int[] charMap = new int[256];
+[0,0,0.....1,1,1] 
+-> new String(charMap);
+
+a -97
+z - 122
+

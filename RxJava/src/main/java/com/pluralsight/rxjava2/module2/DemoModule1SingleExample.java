@@ -25,7 +25,7 @@ public class DemoModule1SingleExample {
     
 
         // Create an Observable<String> that contains the 24 greek letters.
-        Single<String> targetObservable = Observable.fromArray(GreekAlphabet.greekLetters)
+        Single<String> targetObservable = Observable.fromArray(new String[] {"Shivam","Yamini"})
 
                 // From the stream of greek letters, take only the first one.
                 .first("A");
@@ -34,6 +34,7 @@ public class DemoModule1SingleExample {
         // Subscribe to the "Single" result Observable.
         // Note the slightly different method names on the MaybeObserver interface.
         targetObservable.subscribe(new SingleObserver<String>() {
+        	
 
             // onSubscribe is called in the usual way...
             @Override

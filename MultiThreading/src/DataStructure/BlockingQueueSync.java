@@ -1,10 +1,13 @@
 package DataStructure;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class BlockingQueueSync<T> {
 
 	private T[] queue;
 	private int limit = 10;
-	int head = 0, tail = 0, size = 0;
+	int head = 0, tail = 0;
+	AtomicInteger size = new AtomicInteger(0);
 
 	public BlockingQueueSync(int limit) {
 		this.limit = limit;
@@ -16,19 +19,19 @@ public class BlockingQueueSync<T> {
 		synchronized (queue) {
 
 			// Blocking Queue Function
-			while (size == limit) {
+			while (size.get() == limit) {
 				wait();
 			}
 			// Queue Function
 			queue[++tail] = item;
-			size++;
+			size.incrementAndGet();
 
 			// Optimized Blocking Queue Function
 			// If this statement was not here, then only those threads
 			// would be notified which are in this synchronization queue
 			// instead of the threads which are also waiting for the lock on queue
 			// but which are in the Dq synchronization Queue
-			if (size == 1) {
+			if (size.get() == 1) {
 				notifyAll();
 			}
 		}
@@ -38,17 +41,17 @@ public class BlockingQueueSync<T> {
 
 		synchronized (queue) {
 			// Blocking Queue Function
-			while (size == 0) {
+			while (size.get() == 0) {
 				wait();
 			}
 
 			// Queue Function
 			T item = queue[head];
 			head++;
-			size--;
+			size.decrementAndGet();
 
-			//// Optimized Blocking Queue Function
-			if (size == limit - 1) {
+			//// To notify all the producer threads
+			if (size.get() == limit - 1) {
 				notifyAll();
 			}
 			return item;
@@ -56,7 +59,7 @@ public class BlockingQueueSync<T> {
 	}
 
 	public Boolean isEmpty() {
-		return size == 0 ? true : false;
+		return size.get() == 0 ? true : false;
 	}
 
 }
