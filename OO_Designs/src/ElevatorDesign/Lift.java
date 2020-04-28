@@ -1,4 +1,4 @@
-package com.lift.interaction;
+package ElevatorDesign;
 
 import java.util.EnumMap;
 
@@ -7,6 +7,7 @@ public class Lift {
 	// Floor and Waiting people mapping
 	final int MAX_CAPACITY;
 	int curCapacity;
+	
 	private EnumMap<Floors, Integer> goingUp;
 	private EnumMap<Floors, Integer> goingDown;
 	private Thread liftThread;

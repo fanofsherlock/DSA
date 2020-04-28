@@ -1,4 +1,4 @@
-package com.lift.interaction;
+package ElevatorDesign;
 
 public class Request {
 	

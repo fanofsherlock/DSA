@@ -20,6 +20,7 @@ public class Ibit_KthSmallest {
 	}
 
 	public int kthsmallest(TreeNode A, int B) {
+		//PriorityQueue<TreeNode> minHeap = new PriorityQueue<TreeNode>((a, b) -> a.val - b.val);
 		PriorityQueue<TreeNode> maxHeap = new PriorityQueue<TreeNode>((a, b) -> b.val - a.val);
 		return bfs(maxHeap, A, B);
 	}
@@ -35,6 +36,7 @@ public class Ibit_KthSmallest {
 		while (!levelNodes.isEmpty()) {
 			int curLevelNodes = levelNodes.size();
 			
+			//Iterating through a level in a tree
 			while (curLevelNodes-- > 0) {
 				TreeNode x = levelNodes.poll();
 				if (totalValuesInHeap < k) {
@@ -47,6 +49,7 @@ public class Ibit_KthSmallest {
 						maxHeap.add(x);
 					}
 				}
+				
 				if (x.left != null) {
 					levelNodes.add(x.left);
 				}
@@ -56,7 +59,7 @@ public class Ibit_KthSmallest {
 			}
 
 		} // level Nodes Loop
-		return maxHeap.poll().val;
+		return maxHeap.peek().val;
 	}
 	
 	
