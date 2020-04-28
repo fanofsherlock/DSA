@@ -22,8 +22,9 @@ public class Hardware {
 			hardwareLock.unlock();
 			hardwareLock.lock();
 		}
-
+		
 		Payment payment = null;
+	  
 		payment = new UPIPayment();
 
 		hardwareLock.unlock();

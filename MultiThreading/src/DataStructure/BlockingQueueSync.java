@@ -14,7 +14,7 @@ public class BlockingQueueSync<T> {
 		this.queue = (T[]) new Object[limit];
 	}
 
-	public void enqueue(T item) throws InterruptedException {
+	public  void enqueue(T item) throws InterruptedException {
 
 		synchronized (queue) {
 

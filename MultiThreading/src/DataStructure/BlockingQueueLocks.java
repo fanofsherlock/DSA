@@ -1,5 +1,6 @@
 package DataStructure;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -18,11 +19,11 @@ public class BlockingQueueLocks<T> {
 		backingArray = (T[]) new Object[capacity];
 	}
 
-	public void enQ(T data) {
+	public void enQ(T data) throws InterruptedException {
 		lock.lock();
+
 		while (size == capacity) {
-			lock.unlock();
-			lock.lock();
+			enQCondition.await(3, TimeUnit.SECONDS);
 		}
 
 		if (tail == capacity) {
@@ -33,16 +34,19 @@ public class BlockingQueueLocks<T> {
 		dQCondition.signalAll();
 
 		size++;
-		lock.unlock();
+		dbConnection(lock);
 
 	}
 
-	public T dQ() {
+	private void dbConnection(Lock lock) {
+		lock.unlock();
+	}
+
+	public T dQ() throws InterruptedException {
 		lock.lock();
 
 		while (size == 0) {
-			lock.unlock();
-			lock.lock();
+			dQCondition.await();
 		}
 
 		if (head == capacity) {
@@ -54,6 +58,7 @@ public class BlockingQueueLocks<T> {
 		size--;
 		enQCondition.signalAll();
 		lock.unlock();
+
 		return data;
 
 	}

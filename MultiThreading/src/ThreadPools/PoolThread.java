@@ -4,18 +4,25 @@ import DataStructure.BlockingQueueSync;
 
 public class PoolThread extends Thread {
 
+	// Instance of shared threadPool queue
 	private BlockingQueueSync<Runnable> taskQueue = null;
-	private boolean isStopped = false;
+
+	// Current Thread Status
+	private boolean isThisThreadStopped = false;
+
+	// Current Task time
+	Long start = System.currentTimeMillis();
 
 	public PoolThread(BlockingQueueSync queue) {
 		taskQueue = queue;
 	}
 
 	public void run() {
-		while (!isStopped()) {
+		while (!isThisThreadStopped()) {
 			try {
 				Runnable runnable = (Runnable) taskQueue.dequeue();
 				runnable.run();
+				System.out.println();
 			} catch (Exception e) {
 				// log or otherwise report exception,
 				// but keep pool thread alive.
@@ -24,11 +31,12 @@ public class PoolThread extends Thread {
 	}
 
 	public synchronized void doStop() {
-		isStopped = true;
+		isThisThreadStopped = true;
 		this.interrupt(); // break pool thread out of dequeue() call.
 	}
 
-	public synchronized boolean isStopped() {
-		return isStopped;
+	public synchronized boolean isThisThreadStopped() {
+		return isThisThreadStopped;
 	}
+
 }

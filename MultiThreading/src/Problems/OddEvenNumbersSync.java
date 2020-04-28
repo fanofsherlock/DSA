@@ -11,6 +11,7 @@ public class OddEvenNumbersSync {
 	Condition printOdd = syncLock.newCondition();
 	volatile boolean canPrintEven = false;
 
+	
 	public static void main(String[] args) {
 		OddEvenNumbersSync sync = new OddEvenNumbersSync();
 		Thread even = new Thread(sync.new printEven(10));

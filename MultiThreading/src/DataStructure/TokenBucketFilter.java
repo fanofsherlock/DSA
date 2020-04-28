@@ -3,6 +3,9 @@ package DataStructure;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+// API Rate limiting mechanism 
+// Client side rate limiting
+// Opposite of Server side load balancing
 public class TokenBucketFilter {
 
 	private long MAX_TOKENS = 0;
@@ -26,8 +29,14 @@ public class TokenBucketFilter {
 		synchronized (tokenLock) {
 			refillGreedily();
 			while (availTokens == 0) {
-				tokenLock.wait();
+				//tokenLock.wait();//Blocking
+			    return ; //Non-blocking
 			}
+			
+			/*
+			 Do useful work 
+			*/
+			
 			tokenLock.notifyAll();
 			availTokens--;
 			lastRequest = System.currentTimeMillis();
@@ -72,7 +81,7 @@ public class TokenBucketFilter {
 			e.printStackTrace();
 		}
 
-		es.execute(new Filler(t));
+		//es.execute(new Filler(t));
 
 		for (int i = 0; i < 10; i++) {
 			es.execute(new TokenUser(t));

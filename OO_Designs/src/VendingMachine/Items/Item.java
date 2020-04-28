@@ -5,6 +5,8 @@ public class Item {
 	String name;
 	String description;
 	ItemType type;
+	double price;
+	int count;
 
 	public Item(String name, String description, ItemType type) {
 		this.name = name;
@@ -35,5 +37,23 @@ public class Item {
 	public void setType(ItemType type) {
 		this.type = type;
 	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
+	
 
 }

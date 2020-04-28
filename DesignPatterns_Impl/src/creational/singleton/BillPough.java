@@ -2,6 +2,9 @@ package creational.singleton;
 
 public class BillPough {
 
+	public BillPough(String x) {
+	}
+
 	private BillPough() {
 	}
 
