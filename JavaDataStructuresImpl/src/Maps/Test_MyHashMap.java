@@ -58,7 +58,9 @@ class Test_MyHashMap {
 		assertFalse(map.containsKey("d"));
 	}
 
+	@Test
 	void testResizing() {
+		int size = map.size();
 		map.put("e", 5);
 		map.put("f", 6);
 		map.put("g", 7);
@@ -78,6 +80,7 @@ class Test_MyHashMap {
 		map.put("q", 5);
 		map.put("r", 6);
 		map.put("s", 7);
+		assertEquals(map.size(),size+15);
 
 	}
 

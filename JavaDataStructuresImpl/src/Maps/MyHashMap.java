@@ -13,6 +13,7 @@ public class MyHashMap<K, V> {
 	 */
 
 	static class Entry<K, V> {
+		
 		K key;
 		V value;
 		Entry<K, V> next;
@@ -38,8 +39,9 @@ public class MyHashMap<K, V> {
 	}
 
 	private void resize() {
+	
 		if (elementsFilled >= loadFactor * entryTable.length) {
-			// Creating Generic Array
+			
 			Entry[] newEntryTable = new Entry[entryTable.length * 2];
 			for (int i = 0; i < entryTable.length; i++) {
 				newEntryTable[i] = entryTable[i];
