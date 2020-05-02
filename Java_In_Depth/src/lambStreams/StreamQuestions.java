@@ -1,6 +1,7 @@
 package lambStreams;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -80,30 +81,30 @@ public class StreamQuestions {
 
 	public static void main(String[] args) {
 		// QuestionSet1();
-		// QuesitonSet2();
-		// QuestionSet3();
-		// QuestionSet4();
-		Question5();
+		QuesitonSet2();
+		 QuestionSet3();
+	 QuestionSet4();
+		 Question5();
 	}
 
-	//remove first and last digit of maximum number in a list
+	// remove first and last digit of maximum number in a list
 	private static void Question5() {
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(11);
 		list.add(22);
 		list.add(33);
 		list.add(44);
-		list.add(55);
+		list.add(555);
 		int max = list.stream().mapToInt(e -> e).max().getAsInt();
 		String strMax = String.valueOf(max);
 		int num = 0;
-		
+
 		try {
-		num = Integer.valueOf(strMax.substring(1, strMax.length() - 1));
-		} catch(NumberFormatException e) {
-			num=0;
+			num = Integer.valueOf(strMax.substring(1, strMax.length() - 1));
+		} catch (NumberFormatException e) {
+			num = 0;
 		}
-		
+
 		System.out.println(num);
 
 	}
@@ -126,6 +127,8 @@ public class StreamQuestions {
 	private static void QuestionSet3() {
 		String str = "This is just a random story that I am writing in order for me to test "
 				+ " some code and youo know that is a wonder opportunity to do so . It is awesome";
+		
+		Arrays.stream(str.split(" "));
 
 		Predicate<String> Apred = e -> e.startsWith("a") || e.startsWith("A");
 		Predicate<String> Epred = e -> e.startsWith("e") || e.startsWith("E");
@@ -154,6 +157,7 @@ public class StreamQuestions {
 		// Map and Filter
 		print(findCountOfEmpWithnameStartingFrom(list, "A"));
 
+		// ["HR" -> "1,2,3"]
 		// ToMap (Notice how instead of using groupBy I am using toMap)
 		groupDeptWithIds(list).forEach((k, v) -> System.out.println(k + " " + v));
 
@@ -176,6 +180,11 @@ public class StreamQuestions {
 	}
 
 	public static void QuesitonSet2() {
+
+		Stream<Integer> stream1 = Stream.of(1, 2, 3);
+		
+		Stream<Integer> stream2 = Stream.iterate(0, i->i+1).limit(20);
+		
 		// StreamBuilder
 		Builder<Employee> builder = Stream.builder();
 		builder.accept(new Employee("test1", 1, 100, "IT"));
@@ -183,8 +192,9 @@ public class StreamQuestions {
 		Stream<Employee> stream = builder.build();
 	}
 
+	// e.starsWith("A")||e.startsWith("B)
 	private static String returnNameOfAllEmployeesBeforeC(List<Employee> list) {
-		return list.parallelStream().map(e -> e.getName()).filter(e -> e.compareTo("C") < 0)
+		return list.parallelStream().map(e -> e.getName()).takeWhile(e -> !e.startsWith("Z"))
 				.collect(Collectors.joining(",", "[", "]"));
 	}
 
@@ -198,7 +208,7 @@ public class StreamQuestions {
 
 	private static Map<String, String> groupDeptWithIds(List<Employee> list) {
 		return list.parallelStream().collect(
-				Collectors.toMap(e -> e.getDept(), e -> e.getEmpId() + "", (val1, val2) -> val1 + ", " + val2));
+				Collectors.toMap(e -> e.getDept(), e -> e.getEmpId() + "", (key1, key2) -> key1 + ", " + key2));
 	}
 
 	private static Map<String, String> mapDeptWithIdsAscending(List<Employee> list) {

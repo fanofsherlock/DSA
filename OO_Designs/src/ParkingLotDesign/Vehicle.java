@@ -34,20 +34,19 @@ public class Vehicle {
 	@Override
 	public boolean equals(Object obj) {
 
-		// 1) if current object reference and provided reference are pointing to same
-		// underneath object
+		// 1) if current object reference and provided reference are pointing to same underneath object
 		if (obj == this) {
 			return true;
 		}
 
 		// 2) Comparison with null should return false
-		// 3) Not using instaceOf(since it returns true for child classes also)
+		// 3) Not using instaceeOf(since it returns true for child classes also)
 		if (obj == null || (obj.getClass() != this.getClass())) {
 			return false;
 		}
 
 		Vehicle v = (Vehicle) obj;
-
+		
 		return Objects.deepEquals(this.getLicenseNumber(), v.getLicenseNumber())
 				&& Objects.deepEquals(this.getType(), v.getType());
 	}
