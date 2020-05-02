@@ -1,17 +1,22 @@
 package HitCounter;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class HitCounterSingleMachine {
 
+	final Long machineId;
 	int[] hits;
 	int[] timeStamps;
 	int timeRangeInSeconds;
 
-	public HitCounterSingleMachine(int timeRangeInSeconds) {
-		// Boundary conditions for time Range
+	public HitCounterSingleMachine(int timeRangeInSeconds, long machineId) {
 
 		hits = new int[timeRangeInSeconds];
 		timeStamps = new int[timeRangeInSeconds];
 		this.timeRangeInSeconds = timeRangeInSeconds;
+		this.machineId = machineId;
+
 	}
 
 	/*
@@ -33,7 +38,7 @@ public class HitCounterSingleMachine {
 	 * ones
 	 * 
 	 */
-	void hit(int timeStamp) {
+	synchronized void hit(int timeStamp) {
 		int id = timeStamp % timeRangeInSeconds;
 		if (timeStamps[id] != timeStamp) {
 			timeStamps[id] = timeStamp;
@@ -43,7 +48,7 @@ public class HitCounterSingleMachine {
 		}
 	}
 
-	void hit2(int timeStamp) {
+	synchronized void hit2(int timeStamp) {
 		int id = timeStamp % timeRangeInSeconds;
 		if (timeStamps[id] < timeStamp) {
 			timeStamps[id] = timeStamp;
@@ -52,16 +57,16 @@ public class HitCounterSingleMachine {
 			hits[id]++;
 		}
 	}
-	
-	
+
 	/*
-	  You provide a timeStamp like t0 -> 435 seconds, t->867 seconds since start of website
-	  I look into my timeStamps array and if the timeStamps, stored there are in the range
-	  Of what we are reliably offering then we return the result to you 
-	
+	 * You provide a timeStamp like t0 -> 435 seconds, t->867 seconds since start of
+	 * website I look into my timeStamps array and if the timeStamps, stored there
+	 * are in the range Of what we are reliably offering then we return the result
+	 * to you
+	 * 
 	 */
 
-	int getHits(int timeStamp) {
+	synchronized int getHits(int timeStamp) {
 		int result = 0;
 		int id = timeStamp % timeStamps.length;
 
@@ -73,4 +78,27 @@ public class HitCounterSingleMachine {
 
 		return result;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + this.machineId.hashCode();
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (obj == null || obj.getClass() != this.getClass()) {
+			return false;
+		}
+		HitCounterSingleMachine other = (HitCounterSingleMachine) obj;
+
+		return Objects.deepEquals(this.machineId, other.machineId);
+	}
+
 }
