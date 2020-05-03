@@ -7,7 +7,7 @@ public class Player {
 	int Fours;
 	int Sixes;
 	int ballsFaced;
-	InningStatus status = InningStatus.DID_NOT_BAT;
+	PlayerInningStatus status = PlayerInningStatus.DID_NOT_BAT;
 
 	public Player(String name) {
 		super();
@@ -66,11 +66,11 @@ public class Player {
 		this.runsScored = runsScored;
 	}
 
-	public InningStatus getStatus() {
+	public PlayerInningStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(InningStatus status) {
+	public void setStatus(PlayerInningStatus status) {
 		this.status = status;
 	}
 

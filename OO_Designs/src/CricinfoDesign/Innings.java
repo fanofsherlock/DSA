@@ -45,8 +45,8 @@ public class Innings {
 		List<Player> openers = currentTeam.getOpeners();
 		PlayerOnStrike = openers.get(0);
 		PlayerRunningEnd = openers.get(1);
-		PlayerOnStrike.setStatus(InningStatus.BATTING);
-		PlayerRunningEnd.setStatus(InningStatus.BATTING);
+		PlayerOnStrike.setStatus(PlayerInningStatus.BATTING);
+		PlayerRunningEnd.setStatus(PlayerInningStatus.BATTING);
 
 	}
 
@@ -136,13 +136,13 @@ public class Innings {
 			currentTeam.incrementScore(BowlTypes.WICKET.getRunsGiven());
 			currentTeam.incrementWickets();
 			PlayerOnStrike.incrementBallsFaced();
-			PlayerOnStrike.setStatus(InningStatus.OUT);
+			PlayerOnStrike.setStatus(PlayerInningStatus.OUT);
 
 			PlayerOnStrike = currentTeam.getNextPlayer();
 
 			// If innings ended
 			if (PlayerOnStrike != null) {
-				PlayerOnStrike.setStatus(InningStatus.BATTING);
+				PlayerOnStrike.setStatus(PlayerInningStatus.BATTING);
 			} else {
 				hasInningsEnded = true;
 			}
