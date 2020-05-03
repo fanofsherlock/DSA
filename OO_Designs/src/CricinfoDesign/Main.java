@@ -41,18 +41,18 @@ public class Main {
 		sb.addBowl(BowlTypes.TRIPLE);
 		sb.addBowl(BowlTypes.WIDE);
 		sb.addBowl(BowlTypes.NO_BALL);
-		sb.addBowl(BowlTypes.WICKET);
-		sb.addBowl(BowlTypes.WICKET);
+		sb.addBowl(BowlTypes.WICKET);// Wicket
+		sb.addBowl(BowlTypes.WICKET);// Wicket
 		sb.addBowl(BowlTypes.FOUR);
 		sb.addBowl(BowlTypes.SINGLE);
 		sb.addBowl(BowlTypes.DOUBLE);
 		sb.addBowl(BowlTypes.TRIPLE);
 		sb.addBowl(BowlTypes.WIDE);
 		sb.addBowl(BowlTypes.NO_BALL);
-		sb.addBowl(BowlTypes.WICKET);
-		sb.addBowl(BowlTypes.WICKET);
+		sb.addBowl(BowlTypes.WICKET);// wicket
+		// Wicket
 
-		//System.out.println(sb.getCurrentMatchStats());
+		// System.out.println(sb.getCurrentMatchStats());
 
 		// Simulating Second Innings
 		sb.startNewInnings();
@@ -70,8 +70,8 @@ public class Main {
 
 		sb.addBowl(BowlTypes.FOUR);
 		sb.addBowl(BowlTypes.SINGLE);
-		sb.addBowl(BowlTypes.WICKET);// wicket
 
+		System.out.println(sb.getCurrentMatchStats());
 		System.out.println(sb.getMatchResult());
 
 	}

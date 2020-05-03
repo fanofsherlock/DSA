@@ -1,7 +1,7 @@
 package CricinfoDesign;
 
 public enum MatchFormat {
-	ODI(50, 2), T20(20, 2), TEST(450, 2), REDUCED(50, 2);
+	ODI(50, 2), T20(20, 2), TEST(450, 4), REDUCED(50, 2);
 
 	int totalOvers;
 	int totalInnings;

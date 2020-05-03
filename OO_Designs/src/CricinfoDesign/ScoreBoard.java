@@ -45,16 +45,17 @@ public class ScoreBoard {
 	}
 
 	public String getCurrentMatchStats() {
-		return currentPlayingTeam.toString();
-	}
-
-	public String getMatchResult() {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(teamA.toString() + "\n\n");
 		sb.append(teamB.toString());
 
 		return sb.toString();
+	}
+
+	public String getMatchResult() {
+		return teamA.score > teamB.score ? "Team A won the match by " + (teamA.score - teamB.score) + " runs"
+				: "Team B won the match by " + (teamB.Players.size() - teamB.wickets) + " wickets";
 	}
 
 	public void startNewInnings() {
@@ -76,6 +77,9 @@ public class ScoreBoard {
 	}
 
 	public void addBowl(BowlTypes bowl) {
+		if (currentInnings.hasInningsEnded) {
+			return; // throw exception
+		}
 		currentInnings.addBowl(bowl);
 	}
 
