@@ -7,7 +7,7 @@ public class Player {
 	int Fours;
 	int Sixes;
 	int ballsFaced;
-	InningStatus status;
+	InningStatus status = InningStatus.DID_NOT_BAT;
 
 	public Player(String name) {
 		super();
@@ -93,6 +93,11 @@ public class Player {
 	@Override
 	public int hashCode() {
 		return this.getName().hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return name + " " + status.name() + " " + runsScored + " " + Fours + " " + Sixes + " " + ballsFaced;
 	}
 
 }

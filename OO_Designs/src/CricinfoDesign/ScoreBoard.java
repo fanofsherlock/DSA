@@ -70,8 +70,8 @@ public class ScoreBoard {
 			// throw exception;
 		}
 
-		Innings inning = new Innings(inningNumber, currentPlayingTeam, format);
-		inning.starInnings();
+		currentInnings = new Innings(inningNumber, currentPlayingTeam, format);
+		currentInnings.starInnings();
 
 	}
 

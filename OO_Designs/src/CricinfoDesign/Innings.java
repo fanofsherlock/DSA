@@ -28,7 +28,6 @@ public class Innings {
 			// Fresh over
 			bowlsRemaining = BOWLS_IN_AN_OVER;
 			rotateStrike();
-
 		} else {
 			hasInningsEnded = true;
 		}
@@ -46,10 +45,15 @@ public class Innings {
 		List<Player> openers = currentTeam.getOpeners();
 		PlayerOnStrike = openers.get(0);
 		PlayerRunningEnd = openers.get(1);
+		PlayerOnStrike.setStatus(InningStatus.BATTING);
+		PlayerRunningEnd.setStatus(InningStatus.BATTING);
 
 	}
 
 	public void addBowl(BowlTypes bowl) {
+		if (hasInningsEnded) {
+			return; // ThrowException
+		}
 		if (bowlsRemaining == 0) {
 			startNewOver();
 		}
@@ -79,7 +83,70 @@ public class Innings {
 		case SINGLE: {
 			currentTeam.incrementScore(BowlTypes.SINGLE.getRunsGiven());
 			PlayerOnStrike.incrementRunsScored(BowlTypes.SINGLE.getRunsGiven());
-			
+			PlayerOnStrike.incrementBallsFaced();
+			rotateStrike();
+		}
+
+		case DOUBLE: {
+			currentTeam.incrementScore(BowlTypes.DOUBLE.getRunsGiven());
+			PlayerOnStrike.incrementRunsScored(BowlTypes.DOUBLE.getRunsGiven());
+			PlayerOnStrike.incrementBallsFaced();
+		}
+
+		case TRIPLE: {
+			currentTeam.incrementScore(BowlTypes.TRIPLE.getRunsGiven());
+			PlayerOnStrike.incrementRunsScored(BowlTypes.TRIPLE.getRunsGiven());
+			PlayerOnStrike.incrementBallsFaced();
+			rotateStrike();
+		}
+
+		case FOUR_SINGLES: {
+			currentTeam.incrementScore(BowlTypes.FOUR_SINGLES.getRunsGiven());
+			PlayerOnStrike.incrementRunsScored(BowlTypes.FOUR_SINGLES.getRunsGiven());
+			PlayerOnStrike.incrementBallsFaced();
+
+		}
+
+		case FIVE_SINGLES: {
+			currentTeam.incrementScore(BowlTypes.FIVE_SINGLES.getRunsGiven());
+			PlayerOnStrike.incrementRunsScored(BowlTypes.FIVE_SINGLES.getRunsGiven());
+			PlayerOnStrike.incrementBallsFaced();
+			rotateStrike();
+		}
+
+		case FOUR: {
+			currentTeam.incrementScore(BowlTypes.FOUR.getRunsGiven());
+			PlayerOnStrike.incrementRunsScored(BowlTypes.FOUR.getRunsGiven());
+			PlayerOnStrike.incrementBallsFaced();
+			PlayerOnStrike.incrementFours();
+		}
+
+		case SIX: {
+			currentTeam.incrementScore(BowlTypes.SIX.getRunsGiven());
+			PlayerOnStrike.incrementRunsScored(BowlTypes.SIX.getRunsGiven());
+			PlayerOnStrike.incrementBallsFaced();
+			PlayerOnStrike.incrementSixes();
+		}
+
+		case PENALTY: {
+			currentTeam.incrementScore(BowlTypes.PENALTY.getRunsGiven());
+		}
+
+		case WICKET: {
+			currentTeam.incrementScore(BowlTypes.WICKET.getRunsGiven());
+			currentTeam.incrementWickets();
+			PlayerOnStrike.incrementBallsFaced();
+			PlayerOnStrike.setStatus(InningStatus.OUT);
+
+			PlayerOnStrike = currentTeam.getNextPlayer();
+
+			// If innings ended
+			if (PlayerOnStrike != null) {
+				PlayerOnStrike.setStatus(InningStatus.BATTING);
+			} else {
+				hasInningsEnded = true;
+			}
+
 		}
 
 		}

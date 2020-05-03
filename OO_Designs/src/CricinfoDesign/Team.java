@@ -54,4 +54,17 @@ public class Team {
 	public void incrementWickets() {
 		wickets++;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Team name: " + this.name + "\n");
+		sb.append("Final total :" + this.score + "/" + this.wickets + "\n");
+
+		for (Player p : Players) {
+			sb.append(p.toString() + "\n");
+		}
+
+		return sb.toString();
+	}
 }
