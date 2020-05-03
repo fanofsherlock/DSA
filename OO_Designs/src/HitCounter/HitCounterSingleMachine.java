@@ -6,17 +6,16 @@ import java.util.Objects;
 public class HitCounterSingleMachine {
 
 	final Long machineId;
-	int[] hits;
-	int[] timeStamps;
+	int[] hits; //t-> 1038 (50), t-> 2309 (100), 
+	int[] timeStamps;  //t->1038 , t->2309, t->37
 	int timeRangeInSeconds;
 
+	//300 seconds
 	public HitCounterSingleMachine(int timeRangeInSeconds, long machineId) {
-
 		hits = new int[timeRangeInSeconds];
 		timeStamps = new int[timeRangeInSeconds];
 		this.timeRangeInSeconds = timeRangeInSeconds;
 		this.machineId = machineId;
-
 	}
 
 	/*
@@ -38,6 +37,14 @@ public class HitCounterSingleMachine {
 	 * ones
 	 * 
 	 */
+	
+	
+	// timStamp array to see which timeStamp we are currently monitoring
+	// Hits array to monitor hits on that timestamp 
+	
+	// timeStap[37]-> 37, hits[37]->10 
+	// timeStamp[37] -> 337, hits[37]->1
+	
 	synchronized void hit(int timeStamp) {
 		int id = timeStamp % timeRangeInSeconds;
 		if (timeStamps[id] != timeStamp) {
@@ -65,14 +72,16 @@ public class HitCounterSingleMachine {
 	 * to you
 	 * 
 	 */
-
+	
+	
+   // t-> 450 seconds 
+   // timestamp[1] -> 1
 	synchronized int getHits(int timeStamp) {
 		int result = 0;
-		int id = timeStamp % timeStamps.length;
 
 		for (int i = 0; i < timeStamps.length; i++) {
 			if (timeStamp - timeStamps[i] < timeRangeInSeconds) {
-				result += hits[id];
+				result += hits[i];
 			}
 		}
 
