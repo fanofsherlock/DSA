@@ -85,12 +85,14 @@ public class Innings {
 			PlayerOnStrike.incrementRunsScored(BowlTypes.SINGLE.getRunsGiven());
 			PlayerOnStrike.incrementBallsFaced();
 			rotateStrike();
+			break;
 		}
 
 		case DOUBLE: {
 			currentTeam.incrementScore(BowlTypes.DOUBLE.getRunsGiven());
 			PlayerOnStrike.incrementRunsScored(BowlTypes.DOUBLE.getRunsGiven());
 			PlayerOnStrike.incrementBallsFaced();
+			break;
 		}
 
 		case TRIPLE: {
@@ -98,13 +100,14 @@ public class Innings {
 			PlayerOnStrike.incrementRunsScored(BowlTypes.TRIPLE.getRunsGiven());
 			PlayerOnStrike.incrementBallsFaced();
 			rotateStrike();
+			break;
 		}
 
 		case FOUR_SINGLES: {
 			currentTeam.incrementScore(BowlTypes.FOUR_SINGLES.getRunsGiven());
 			PlayerOnStrike.incrementRunsScored(BowlTypes.FOUR_SINGLES.getRunsGiven());
 			PlayerOnStrike.incrementBallsFaced();
-
+			break;
 		}
 
 		case FIVE_SINGLES: {
@@ -112,6 +115,7 @@ public class Innings {
 			PlayerOnStrike.incrementRunsScored(BowlTypes.FIVE_SINGLES.getRunsGiven());
 			PlayerOnStrike.incrementBallsFaced();
 			rotateStrike();
+			break;
 		}
 
 		case FOUR: {
@@ -119,6 +123,7 @@ public class Innings {
 			PlayerOnStrike.incrementRunsScored(BowlTypes.FOUR.getRunsGiven());
 			PlayerOnStrike.incrementBallsFaced();
 			PlayerOnStrike.incrementFours();
+			break;
 		}
 
 		case SIX: {
@@ -126,10 +131,12 @@ public class Innings {
 			PlayerOnStrike.incrementRunsScored(BowlTypes.SIX.getRunsGiven());
 			PlayerOnStrike.incrementBallsFaced();
 			PlayerOnStrike.incrementSixes();
+			break;
 		}
 
 		case PENALTY: {
 			currentTeam.incrementScore(BowlTypes.PENALTY.getRunsGiven());
+			break;
 		}
 
 		case WICKET: {
@@ -146,6 +153,8 @@ public class Innings {
 			} else {
 				hasInningsEnded = true;
 			}
+
+			break;
 
 		}
 

@@ -7,13 +7,13 @@ import java.util.LinkedList;
 
 public class LRUCache {
 
-	Deque<Integer> dq;
-	HashSet<Integer> map;
+	Deque<Integer> dq; // LRU Cache Queue
+	HashSet<Integer> map;// LRU Cache Lookup
 	final int cacheSize;
 
 	public LRUCache(int cacheSize) {
-		dq=new LinkedList<Integer>();
-		map=new HashSet<Integer>();
+		dq = new LinkedList<Integer>();
+		map = new HashSet<Integer>();
 		this.cacheSize = cacheSize;
 	}
 
@@ -26,17 +26,21 @@ public class LRUCache {
 	}
 
 	void refer(int x) {
+		// Fresh entry
 		if (!map.contains(x)) {
+			// If cache is full remmove last entry
 			if (dq.size() == cacheSize) {
 				int last = dq.removeLast();
 				map.remove(last);
 			}
-		} else {
+		}
+		// Existing entry - Remove from LRU Cache queue
+		else {
 			dq.remove(x);
 		}
 
-		dq.add(x);
-		map.add(x);
+		dq.add(x);// Add to front of cache queue
+		map.add(x);// Add to cache lookup
 	}
 
 }

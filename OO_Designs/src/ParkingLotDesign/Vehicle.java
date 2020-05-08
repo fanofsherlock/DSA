@@ -1,26 +1,19 @@
 package ParkingLotDesign;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Vehicle {
 
-	int id;
 	final String licenseNumber;
 	final VehicleType type;
+	LocalDateTime entryTime;
 
-	public Vehicle(int id, String licenseNumber, VehicleType type) {
-		super();
-		this.id = id;
+	public Vehicle(String licenseNumber, VehicleType type) {
+
 		this.licenseNumber = licenseNumber;
 		this.type = type;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+		this.entryTime = LocalDateTime.now();
 	}
 
 	public String getLicenseNumber() {
@@ -34,7 +27,8 @@ public class Vehicle {
 	@Override
 	public boolean equals(Object obj) {
 
-		// 1) if current object reference and provided reference are pointing to same underneath object
+		// 1) if current object reference and provided reference are pointing to same
+		// underneath object
 		if (obj == this) {
 			return true;
 		}
@@ -46,12 +40,10 @@ public class Vehicle {
 		}
 
 		Vehicle v = (Vehicle) obj;
-		
+
 		return Objects.deepEquals(this.getLicenseNumber(), v.getLicenseNumber())
 				&& Objects.deepEquals(this.getType(), v.getType());
 	}
-	
-	
 
 	@Override
 	public int hashCode() {

@@ -1,7 +1,7 @@
 package ParkingLotDesign;
 
 public enum VehicleType {
-	BIKES(10), CARS(20), TRUCKS(40);
+	BIKES(5), CARS(10), TRUCKS(30);
 
 	int minSpaceRequiredSquareFeet;
 
