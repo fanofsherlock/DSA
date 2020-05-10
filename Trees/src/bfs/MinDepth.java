@@ -13,11 +13,11 @@ public class MinDepth {
 		public TreeNode(int val) {
 			this.val = val;
 		}
-		
+
 		@Override
 		public String toString() {
-			
-			return val+"";
+
+			return val + "";
 		}
 	}
 
@@ -53,19 +53,31 @@ public class MinDepth {
 		return minDepth;
 	}
 
+	public int minDepth2(TreeNode A) {
+
+		int minDepth = 0;
+		if (A == null) {
+			return minDepth;
+		}
+
+		int l = minDepth2(A.left);
+		int r = minDepth2(A.right);
+
+		return l != 0 && r != 0 ? 1+Math.min(l, r) : 1+Math.max(l, r);
+	}
+
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(2);
 		root.right = new TreeNode(3);
 
-		root.left.left = new TreeNode(4);
-		root.left.right = null;
 
 		root.right.left = null;
 		root.right.right = new TreeNode(5);
+		root.right.right.right = new TreeNode(7);
 
 		MinDepth min = new MinDepth();
-		System.out.println(min.minDepth(root));
+		System.out.println(min.minDepth2(root));
 	}
 
 }
