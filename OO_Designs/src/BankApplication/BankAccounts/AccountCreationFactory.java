@@ -6,8 +6,7 @@ public class AccountCreationFactory {
 
 	private static Logger logger = Logger.getLogger(AccountCreationFactory.class.getName());
 
-	public static BankAccount getInstance(String panNumber, String type, Double amount)
-			throws BankAccountException {
+	public static BankAccount getInstance(String panNumber, String type, Double amount) throws BankAccountException {
 		BankAccount newAccount = null;
 
 		switch (type) {
@@ -18,7 +17,7 @@ public class AccountCreationFactory {
 			newAccount = new SavingsAccount();
 			break;
 		default:
-			throw new BankAccountException(logger, type + " account type is not supported!");
+			throw new BankAccountException(logger, type + " account type is not supported! ");
 		}
 
 		return newAccount;
