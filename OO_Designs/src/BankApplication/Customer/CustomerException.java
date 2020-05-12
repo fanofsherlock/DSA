@@ -1,4 +1,4 @@
-package BankApplication;
+package BankApplication.Customer;
 
 import java.util.logging.Logger;
 

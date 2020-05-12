@@ -1,9 +1,13 @@
-package BankApplication;
+package BankApplication.BankAccounts;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
+
+import BankApplication.Transactions.Transaction;
+import BankApplication.Transactions.TransactionType;
+import BankApplication.Transactions.Transaction.TransactionBuilder;
 
 public abstract class BankAccount {
 

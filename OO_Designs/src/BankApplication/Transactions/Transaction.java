@@ -1,4 +1,4 @@
-package BankApplication;
+package BankApplication.Transactions;
 
 public class Transaction {
 

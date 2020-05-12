@@ -1,4 +1,4 @@
-package BankApplication;
+package BankApplication.Branches;
 
 import java.util.List;
 import java.util.Optional;

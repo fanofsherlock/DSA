@@ -1,4 +1,4 @@
-package BankApplication;
+package BankApplication.BankAccounts;
 
 public class SavingsAccount extends BankAccount {
 

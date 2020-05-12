@@ -1,6 +1,8 @@
-package BankApplication;
+package BankApplication.Customer;
 
 import java.util.List;
+
+import BankApplication.BankAccounts.BankAccount;
 
 public class Customer {
 
