@@ -31,8 +31,12 @@ public abstract class BankAccount {
 	// Automatic generation of Transaction Ids
 	AtomicLong currrentTransactionId;
 
-	public BankAccount() {
+	public BankAccount(double amount, double minimumBalance, double interestRate) {
+		transactions = new ArrayList<Transaction>();
 		currrentTransactionId = new AtomicLong(0L);
+		currentBalance = amount;
+		this.minimumBalance = minimumBalance;
+		this.interestRate = interestRate;
 	}
 
 	public synchronized Double withdraw(double amount) throws BankAccountException {
@@ -45,14 +49,18 @@ public abstract class BankAccount {
 			currentBalance -= amount;
 
 		} else {
-			String errorMsg = "Transaction of amount : " + amount
-					+ " is declined due to insufficient minimum banalance";
+			String errorMsg = "Withdrawl of amount : " + amount + " is declined due to insufficient minimum balance";
 			throw new BankAccountException(logger, errorMsg);
 		}
 		return currentBalance;
 	}
 
-	public synchronized Double deposit(double amount) {
+	public synchronized Double deposit(double amount) throws BankAccountException {
+
+		if (amount < 0) {
+			String errorMsg = "Deposit of negative amount : " + amount + " is now supported.";
+			throw new BankAccountException(logger, errorMsg);
+		}
 
 		long curId = currrentTransactionId.incrementAndGet();
 		Transaction newTransaction = new Transaction.TransactionBuilder().setTransactionID(curId).setAmount(amount)
@@ -71,7 +79,7 @@ public abstract class BankAccount {
 		List<Transaction> lastTenTransactions = null;
 		if (transactions.size() >= 10) {
 			lastTenTransactions = new ArrayList<Transaction>(
-					transactions.subList(transactions.size() - 10, transactions.size() - 1));
+					transactions.subList(transactions.size() - 10, transactions.size()));
 		} else {
 			lastTenTransactions = new ArrayList<Transaction>(transactions);
 		}

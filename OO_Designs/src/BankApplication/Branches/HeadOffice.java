@@ -1,5 +1,6 @@
 package BankApplication.Branches;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
@@ -14,14 +15,16 @@ public class HeadOffice {
 	AtomicLong lastCreatedBranch;
 
 	public HeadOffice() {
+		branches = new ArrayList<Branch>();
 		lastCreatedBranch = new AtomicLong(0L);
 	}
 
-	public synchronized void createBranch() {
+	public synchronized Branch createBranch() {
 		Branch newBranch = new Branch();
 		long newBranchId = lastCreatedBranch.incrementAndGet();
 		newBranch.setBranchId(newBranchId + "");
 		branches.add(newBranch);
+		return newBranch;
 	}
 
 	public Branch getBranchById(String branchId) throws BranchException {
