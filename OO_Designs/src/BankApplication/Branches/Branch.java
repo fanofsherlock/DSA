@@ -12,6 +12,7 @@ import BankApplication.BankAccounts.BankAccountException;
 import BankApplication.Customer.Customer;
 import BankApplication.Customer.CustomerException;
 
+//Thread-safe
 public class Branch {
 
 	private Logger logger = Logger.getLogger(Branch.class.getName());
@@ -66,36 +67,42 @@ public class Branch {
 	/* Searches through the customers registered at this branch using streams */
 	public Customer getCustomerByPanNumber(String panNumber) throws CustomerException {
 
-		Optional<Customer> customer = customers.parallelStream()
-				.filter(e -> e.getPanNumber().equalsIgnoreCase(panNumber)).findAny();
+		synchronized (customers) {
+			Optional<Customer> customer = customers.parallelStream()
+					.filter(e -> e.getPanNumber().equalsIgnoreCase(panNumber)).findAny();
 
-		// throw error that customer is not found
-		String errorMsg = "Customer with given pan " + panNumber + " not found in db.";
-		customer.orElseThrow(() -> new CustomerException(logger, errorMsg));
+			// throw error that customer is not found
+			String errorMsg = "Customer with given pan " + panNumber + " not found in db.";
+			customer.orElseThrow(() -> new CustomerException(logger, errorMsg));
 
-		// else return the found customer
-		return customer.get();
+			// else return the found customer
+			return customer.get();
+		}
+
 	}
 
 	/* Searches through the bank accounts registered at this branch using streams */
 	public BankAccount getAccountByAccountNumber(String accountNumber) throws BankAccountException {
 
-		Optional<BankAccount> account = bankAccounts.parallelStream()
-				.filter(e -> e.getAccountNumber().equalsIgnoreCase(accountNumber)).findAny();
+		synchronized (bankAccounts) {
+			Optional<BankAccount> account = bankAccounts.parallelStream()
+					.filter(e -> e.getAccountNumber().equalsIgnoreCase(accountNumber)).findAny();
 
-		// throw error that account is not found
-		String errorMsg = "Bank Account with given acctNo: " + accountNumber + " not found in db.";
-		account.orElseThrow(() -> new BankAccountException(logger, errorMsg));
+			// throw error that account is not found
+			String errorMsg = "Bank Account with given acctNo: " + accountNumber + " not found in db.";
+			account.orElseThrow(() -> new BankAccountException(logger, errorMsg));
 
-		// else return the found account
-		return account.get();
+			// else return the found account
+			return account.get();
+		}
+
 	}
 
 	public String getBranchId() {
 		return branchId;
 	}
 
-	public void setBranchId(String branchId) {
+	public synchronized void setBranchId(String branchId) {
 		this.branchId = branchId;
 	}
 }

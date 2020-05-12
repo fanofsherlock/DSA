@@ -1,5 +1,6 @@
 package BankApplication.BankAccounts;
 
+//Thread-safe
 public class CurrentAcount extends BankAccount {
 
 	double minimumBalance = 20000;

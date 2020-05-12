@@ -9,6 +9,7 @@ import BankApplication.Transactions.Transaction;
 import BankApplication.Transactions.TransactionType;
 import BankApplication.Transactions.Transaction.TransactionBuilder;
 
+//Thread-safe bank account class
 public abstract class BankAccount {
 
 	private Logger logger = Logger.getLogger(BankAccount.class.getName());
@@ -72,7 +73,7 @@ public abstract class BankAccount {
 	}
 
 	public List<Transaction> getTransactionHistory() {
-		return transactions;
+		return new ArrayList<Transaction>(transactions);
 	}
 
 	public List<Transaction> getMiniStatement() {

@@ -6,6 +6,7 @@ public class AccountCreationFactory {
 
 	private static Logger logger = Logger.getLogger(AccountCreationFactory.class.getName());
 
+	//Thread-safe
 	public static BankAccount getInstance(String type, Double amount) throws BankAccountException {
 		BankAccount newAccount = null;
 

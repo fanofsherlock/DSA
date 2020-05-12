@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
+//Thread-safe
 public class HeadOffice {
 
 	private Logger logger = Logger.getLogger(HeadOffice.class.getName());
@@ -23,24 +24,30 @@ public class HeadOffice {
 		Branch newBranch = new Branch();
 		long newBranchId = lastCreatedBranch.incrementAndGet();
 		newBranch.setBranchId(newBranchId + "");
-		branches.add(newBranch);
+		synchronized (branches) {
+			branches.add(newBranch);
+		}
+
 		return newBranch;
 	}
 
 	public Branch getBranchById(String branchId) throws BranchException {
 
-		Optional<Branch> foundBranch = branches.parallelStream().filter(e -> e.getBranchId().equalsIgnoreCase(branchId))
-				.findAny();
+		synchronized (branches) {
+			Optional<Branch> foundBranch = branches.parallelStream()
+					.filter(e -> e.getBranchId().equalsIgnoreCase(branchId)).findAny();
 
-		// If Branch was not found throw exception
-		String errorMsg = "Branch with provided branchId: " + branchId + " was not found in records";
-		foundBranch.orElseThrow(() -> new BranchException(logger, errorMsg));
+			// If Branch was not found throw exception
+			String errorMsg = "Branch with provided branchId: " + branchId + " was not found in records";
+			foundBranch.orElseThrow(() -> new BranchException(logger, errorMsg));
 
-		// Otherwise return value
-		return foundBranch.get();
+			// Otherwise return value
+			return foundBranch.get();
+		}
+
 	}
 
 	public List<Branch> getAllBranches() {
-		return branches;
+		return new ArrayList<Branch>(branches);
 	}
 }

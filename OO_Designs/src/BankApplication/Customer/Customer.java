@@ -5,6 +5,7 @@ import java.util.List;
 
 import BankApplication.BankAccounts.BankAccount;
 
+//Thread-safe
 public class Customer {
 
 	private String panNumber;
@@ -16,11 +17,13 @@ public class Customer {
 	}
 
 	public List<BankAccount> getBankAccounts() {
-		return accounts;
+		return new ArrayList<>(accounts);
 	}
 
 	public void addBankAccount(BankAccount account) {
-		accounts.add(account);
+		synchronized (accounts) {
+			accounts.add(account);
+		}
 	}
 
 	public String getPanNumber() {
