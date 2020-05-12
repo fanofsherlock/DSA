@@ -17,7 +17,7 @@ public class AccountCreationFactory {
 			newAccount = new SavingsAccount();
 			break;
 		default:
-			throw new BankAccountException(logger, type + " account type is not supported! ");
+			throw new BankAccountException(logger, type + " account type is not supported!");
 		}
 
 		return newAccount;
