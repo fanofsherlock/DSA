@@ -2,7 +2,7 @@ package BankApplication;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
 public abstract class BankAccount {
@@ -25,16 +25,16 @@ public abstract class BankAccount {
 	private List<Transaction> transactions;
 
 	// Automatic generation of Transaction Ids
-	AtomicInteger currrentTransactionId;
+	AtomicLong currrentTransactionId;
 
 	public BankAccount() {
-		currrentTransactionId = new AtomicInteger(0);
+		currrentTransactionId = new AtomicLong(0L);
 	}
 
 	public synchronized Double withdraw(double amount) throws BankAccountException {
 
 		if (currentBalance - amount >= minimumBalance) {
-			int curId = currrentTransactionId.incrementAndGet();
+			long curId = currrentTransactionId.incrementAndGet();
 			Transaction newTransaction = new Transaction.TransactionBuilder().setTransactionID(curId).setAmount(amount)
 					.setType(TransactionType.WITHDRAW).build();
 			transactions.add(newTransaction);
@@ -50,7 +50,7 @@ public abstract class BankAccount {
 
 	public synchronized Double deposit(double amount) {
 
-		int curId = currrentTransactionId.incrementAndGet();
+		long curId = currrentTransactionId.incrementAndGet();
 		Transaction newTransaction = new Transaction.TransactionBuilder().setTransactionID(curId).setAmount(amount)
 				.setType(TransactionType.DEPOSIT).build();
 		transactions.add(newTransaction);
@@ -88,6 +88,10 @@ public abstract class BankAccount {
 
 	public String getAccountNumber() {
 		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 
 	abstract String getType();

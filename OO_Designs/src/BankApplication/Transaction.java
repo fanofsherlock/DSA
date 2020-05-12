@@ -41,7 +41,7 @@ public class Transaction {
 			// FIXME Auto-generated constructor stub
 		}
 
-		public TransactionBuilder setTransactionID(int transactionId) {
+		public TransactionBuilder setTransactionID(long transactionId) {
 			this.transactionId = transactionId + "";
 			return this;
 		}
