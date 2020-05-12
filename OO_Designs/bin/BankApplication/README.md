@@ -1,1 +1,1 @@
-Object Oriented Design of Multi-threaded, Java-8 based Bank Application
+Highly concurrent, Java-8 based Object Oriented Design of a Bank Application
