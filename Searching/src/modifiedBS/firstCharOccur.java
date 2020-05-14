@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class firstCharOccur {
 
@@ -206,6 +207,7 @@ public class firstCharOccur {
 		} else {
 			return bsRightMostOccur(arr, n, x, mid + 1, h);
 		}
+		
 	}
 	
 

@@ -1,4 +1,4 @@
-package IndirectApplications;
+package Partiotioning;
 
 import java.util.ArrayList;
 
