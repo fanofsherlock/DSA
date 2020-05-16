@@ -21,10 +21,12 @@ public class CampStudies {
 
 	}
 
+	// Access specifier, generic declaration, return type, method signature
 	public static <K extends Number, V extends Number> void someGenMethod(K val) {
 
 	}
 
+	// final/static class <Enums>
 	static class Shivam<E> {
 		E name;
 
@@ -42,7 +44,7 @@ public class CampStudies {
 	}
 
 	static void method(List<? extends Object> l) {
-     new ConcurrentSkipListMap<String, Integer>();
+		new ConcurrentSkipListMap<String, Integer>();
 	}
 
 }

@@ -2,12 +2,21 @@ package classAndObjects;
 
 public class test {
 	private int test;
-	
-	test(int test){
-	this.test=test;	
+
+	public test() {
+		System.out.println("Default");
 	}
 
-	void method1(){
+	test(int test) {
+		this();
+		this.test = test;
 	}
-	
+
+	void method1() {
+	}
+
+	public static void main(String[] args) {
+		test t = new test();
+	}
+
 }

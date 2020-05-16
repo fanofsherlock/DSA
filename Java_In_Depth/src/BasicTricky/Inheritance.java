@@ -28,7 +28,7 @@ class Z {
 	}
 }
 
- class MainClass extends Z {
+class MainClass extends Z {
 	{
 		a = new int[5];
 	}
@@ -41,7 +41,7 @@ class Z {
 
 public class Inheritance {
 	public static void main(String[] args) {
-		//TestInheritanceConstructorsHierachy();
+		TestInheritanceConstructorsHierachy();
 		TestInheritanceValueInitialization();
 
 	}
@@ -49,12 +49,10 @@ public class Inheritance {
 	private static void TestInheritanceConstructorsHierachy() {
 		C c = new C();
 		System.out.println(c.s);
-
 	}
 
 	private static void TestInheritanceValueInitialization() {
 		MainClass main = new MainClass();
 	}
 
-	
 }

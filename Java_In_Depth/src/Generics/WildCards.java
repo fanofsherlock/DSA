@@ -55,7 +55,7 @@ public class WildCards {
 	}
 
 	// wildcard for everything
-	static void printCollections3(Collection<?> c) {
+	static void printCollections3(Collection<? extends Number> c) {
 		for (Object o : c) {
 
 		}

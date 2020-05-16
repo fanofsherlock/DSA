@@ -1,6 +1,7 @@
 package Collections;
 
 import java.util.Collections;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.Map;
@@ -12,8 +13,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 public class AllMaps {
+	enum mapEnum {
+		ins5, ins4, ins3;
+	}
 
 	public static void main(String[] args) {
+		TestEnumMap();
 		TestHashMap();
 		TestTreeMap();
 		TestConcurrentHashMap();
@@ -21,6 +26,17 @@ public class AllMaps {
 		TestNavMap();
 		TestIdentityMap();
 		TestWeakHashMAp();
+
+	}
+
+	private static void TestEnumMap() {
+		
+		EnumMap<mapEnum, Integer> map = new EnumMap<AllMaps.mapEnum, Integer>(mapEnum.class);
+		map.put(mapEnum.ins3, 3);
+		map.put(mapEnum.ins4, 4);
+		map.put(mapEnum.ins5, 5);
+
+		map.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "" + e.getValue()));
 	}
 
 	// A concurrent Sorted Map (All sorted collections always implement a navigable
@@ -29,7 +45,7 @@ public class AllMaps {
 		ConcurrentSkipListMap<String, String> skipMap = new ConcurrentSkipListMap<String, String>(
 				(a, b) -> a.compareTo(b));
 		skipMap.put("", "");
-		skipMap.forEach((k,v)->System.out.println(k));
+		skipMap.forEach((k, v) -> System.out.println(k));
 
 	}
 
@@ -68,18 +84,16 @@ public class AllMaps {
 				return v + 1;
 			}
 		});
-		
-		map.computeIfAbsent("1", k->1);
-		map.computeIfPresent("1", (k,v)->v+1);
 
-		
-		
-		map.putIfAbsent("", 
-				
+		map.computeIfAbsent("1", k -> 1);
+		map.computeIfPresent("1", (k, v) -> v + 1);
+
+		map.putIfAbsent("",
+
 				1);
-		
+
 		map.getOrDefault("", 0);
-		map.replaceAll((key,value)-> value);
+		map.replaceAll((key, value) -> value);
 		Map<String, Integer> map2 = Collections.synchronizedMap(map);
 		map2.put("", 1);
 	}

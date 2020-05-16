@@ -19,8 +19,9 @@ public class Equals {
 	
 	@Override
 	public boolean equals(Object obj) {
+		  if(obj==this) return true;
 	      if(obj==null||!(obj instanceof Equals)) return false;
-	      if(obj==this) return true;
+	    
 	   
 		return super.equals(obj);
 	}

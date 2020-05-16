@@ -82,13 +82,14 @@ public class StreamQuestions {
 	public static void main(String[] args) {
 		// QuestionSet1();
 		QuesitonSet2();
-		 QuestionSet3();
-	 QuestionSet4();
-		 Question5();
+		QuestionSet3();
+		QuestionSet4();
+		Question5();
 	}
 
 	// remove first and last digit of maximum number in a list
 	private static void Question5() {
+		
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(11);
 		list.add(22);
@@ -127,7 +128,7 @@ public class StreamQuestions {
 	private static void QuestionSet3() {
 		String str = "This is just a random story that I am writing in order for me to test "
 				+ " some code and youo know that is a wonder opportunity to do so . It is awesome";
-		
+
 		Arrays.stream(str.split(" "));
 
 		Predicate<String> Apred = e -> e.startsWith("a") || e.startsWith("A");
@@ -182,9 +183,8 @@ public class StreamQuestions {
 	public static void QuesitonSet2() {
 
 		Stream<Integer> stream1 = Stream.of(1, 2, 3);
-		
-		Stream<Integer> stream2 = Stream.iterate(0, i->i+1).limit(20);
-		
+		Stream<Integer> stream2 = Stream.iterate(0, i -> i + 1).limit(20);
+
 		// StreamBuilder
 		Builder<Employee> builder = Stream.builder();
 		builder.accept(new Employee("test1", 1, 100, "IT"));

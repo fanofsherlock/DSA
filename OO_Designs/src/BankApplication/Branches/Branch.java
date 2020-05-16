@@ -105,4 +105,7 @@ public class Branch {
 	public synchronized void setBranchId(String branchId) {
 		this.branchId = branchId;
 	}
+	
+	
+	
 }

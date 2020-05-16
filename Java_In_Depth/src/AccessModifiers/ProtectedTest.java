@@ -5,7 +5,8 @@ class Animal {
 	protected String s;
 }
 
-//multiple classes can be default in one Java file
+//multiple classes can be public in one java file
+//but this class is accessible to all classes in the package
 class Vehicle {
 }
 

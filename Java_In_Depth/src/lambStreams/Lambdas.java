@@ -1,4 +1,5 @@
 package lambStreams;
+
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.function.*;
@@ -36,36 +37,17 @@ public class Lambdas {
 	private static DoubleSupplier champAvg = () -> 53.72;
 	private static LongSupplier champSalary = () -> 2300000;
 
-	// FUNCTION accepts one input of one type and produces one of another type
-	// R apply(T t)
-    /*
-     * 
-     public interface Function<T,R> {
-
-      public <R> apply(T parameter);
-     }
-     
-     * 
-     * 
-     * 
-     * 
-     * 
-     */
-	
 	private static Function<String, Stream<Integer>> function = (x) -> Stream.of(x.length());
 	private static BiFunction<String, Integer, Double> someShit = (x, y) -> y.doubleValue() + 1000;
 	private static DoubleToIntFunction justsomeMoreFunction = (x) -> 34;
 
 	// UNARY OPERTOR Input and output are same in number and type
-	// T apply (T t)
 	private static UnaryOperator<String> unOp = (z) -> z;
 
-	// BINARY OPERATOR
-	// Input and output are of same type and in number
-	// R (R a,R b)
+	// BINARY OPERATOR(Two inputs of same type)
 	private static BinaryOperator<String> conCat = (x, y) -> x + y;
 
-	// MAIN METHOD
+	
 	public static void main(String[] args) {
 
 		// Integer Stream
