@@ -1,27 +1,30 @@
 package ChatServer;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 public class Server {
-	HashMap<String, Client> clients;
+
+	HashSet<Client> activeConnections;
 
 	public Server() {
-		clients = new HashMap<String, Client>();
+		activeConnections = new HashSet<Client>();
 	}
 
-	void registerClient(String clientName, Client client) {
-		clients.put(clientName, client);
-	}
-
-	void recieveMessage(String msg, String clientName) {
-		Client client = clients.get(clientName);
-		if (client != null) {
-			client.receive(msg);
-		}
+	boolean sendMessage(String msg) {
+		return false;
 	}
 
 	public boolean sendMessagge(String message, long phoneNo) {
 		return false;
+	}
+
+	public void addConnection(Client client) {
+		activeConnections.add(client);
+
+	}
+
+	public int getActiveConnections() {
+		return activeConnections.size();
 	}
 
 }

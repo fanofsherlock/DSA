@@ -9,6 +9,7 @@ public abstract class Client {
 	long selfPhoneNumber;
 	List<Long> contacts;
 	HashMap<Long, List<String>> chats;
+	LoadBalancer lb;
 	Server s;
 
 	public void readAllMessages(long phoneNo) {

@@ -30,13 +30,14 @@ public class AllMaps {
 	}
 
 	private static void TestEnumMap() {
-		
+
 		EnumMap<mapEnum, Integer> map = new EnumMap<AllMaps.mapEnum, Integer>(mapEnum.class);
 		map.put(mapEnum.ins3, 3);
 		map.put(mapEnum.ins4, 4);
 		map.put(mapEnum.ins5, 5);
 
 		map.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "" + e.getValue()));
+
 	}
 
 	// A concurrent Sorted Map (All sorted collections always implement a navigable

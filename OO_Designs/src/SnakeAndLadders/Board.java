@@ -1,19 +1,15 @@
 package SnakeAndLadders;
 
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
 public class Board {
 	int size;
-	Deque<Player> boardPlayers;
 	List<Snake> snakes;
 	List<Ladder> ladders;
 
 	private Board(BoardBuilder builder) {
 		size = builder.size;
-		boardPlayers = builder.boardPlayers;
 		snakes = builder.snakes;
 		ladders = builder.ladders;
 	}
@@ -21,7 +17,6 @@ public class Board {
 	static class BoardBuilder {
 
 		int size;
-		Deque<Player> boardPlayers;
 		List<Snake> snakes;
 		List<Ladder> ladders;
 
@@ -29,18 +24,13 @@ public class Board {
 			this.size = size;
 		}
 
-		BoardBuilder setSnakes(List<Snake> snakes) {
+		BoardBuilder withSnakes(List<Snake> snakes) {
 			this.snakes = snakes;
 			return this;
 		}
 
-		BoardBuilder setLadders(List<Ladder> ladders) {
+		BoardBuilder withLadders(List<Ladder> ladders) {
 			this.ladders = ladders;
-			return this;
-		}
-
-		BoardBuilder setPlayers(List<Player> players) {
-			boardPlayers = new LinkedList<Player>(players);
 			return this;
 		}
 

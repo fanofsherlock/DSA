@@ -1,7 +1,7 @@
 package SnakeAndLadders;
 
 public enum GameStatus {
-	NOT_STARTED, ONGOING, FINISHED, ABANDONED;
+	NOT_STARTED, ONGOING, FINISHED, PAUSED, ABANDONED;
 
 	String result = this.name();
 

@@ -12,4 +12,8 @@ public class Square {
 		this.currentPiece = currentPiece;
 	}
 
+	public void resetBoard() {
+		currentPiece = null;
+	}
+
 }
