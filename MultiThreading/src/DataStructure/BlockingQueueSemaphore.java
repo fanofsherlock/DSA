@@ -21,6 +21,7 @@ public class BlockingQueueSemaphore<T> {
 
 		try {
 			do {
+				prodSemaphore.release();
 				prodSemaphore.acquire();
 			} while (tail > capacity - 1);
 
@@ -35,21 +36,21 @@ public class BlockingQueueSemaphore<T> {
 	}
 
 	public T dQ() {
-		T data =null;
-		
+		T data = null;
+
 		try {
 			do {
+				conSemaphore.release();
 				conSemaphore.acquire();
-			} while (tail<0);
+			} while (tail < 0);
 
-			data =backingArray[tail--];
+			data = backingArray[tail--];
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
 			prodSemaphore.release();
 		}
-
 
 		return data;
 	}
