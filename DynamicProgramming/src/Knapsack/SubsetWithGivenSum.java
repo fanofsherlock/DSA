@@ -1,6 +1,6 @@
 package Knapsack;
 
-public class SubsetSum {
+public class SubsetWithGivenSum {
 
 	static boolean canPartition(int[] num, int sum) {
 		if (num == null) {
