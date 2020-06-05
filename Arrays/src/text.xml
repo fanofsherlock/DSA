@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+	xml:base="https://genpactonline.sharepoint.com/sites/NissanRPACoEWebPortalDesign/_api/"
+	xmlns="http://www.w3.org/2005/Atom"
+	xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:gml="http://www.opengis.net/gml">
+	<id>f4319ae7-86b8-4169-9c89-62b65fa26af4</id>
+	<title />
+	<updated>2020-02-05T08:57:21Z</updated>
+	<entry m:etag="&quot;1&quot;">
+		<id>59f4422f-f6b2-4624-a088-fc6bf0018afb</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(1)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Current</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>38ad5b12-3d0b-4de0-8c91-a9c82afe10ff</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(2)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Orange</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>792f9488-3331-4e5d-baca-2ee88e690978</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(3)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Sea Monster</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>b3367d9e-8645-457e-af26-8309eb170a2e</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(4)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Green</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>2294f07d-233b-4698-ad74-7367d7b978be</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(5)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Lime</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>c12fe77b-3342-45f7-8f1e-9f60f4ba67f7</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(6)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Nature</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>5fd64df5-6a48-41eb-9b96-70f5f45784e1</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(7)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Blossom</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>38a285dd-f8ec-45a9-b750-c77ee99966c7</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(8)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Sketch</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>1f325863-bcca-442e-bf22-6d0bc99a705a</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(9)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>City</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>3c8e5167-d9cc-4eed-923c-688eab1f1d17</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(10)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Orbit</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>78463e52-dc81-471e-9a42-7794a86ee238</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(11)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Grey</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>854ee498-b0b2-48de-aa24-c4529af444c6</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(12)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Characters</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>7fe1725e-ca15-4db9-aac6-c18c030ef398</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(13)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Office</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>5cf8ffd5-9694-4dbf-a27d-67f32ab35da6</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(14)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Breeze</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>5c1eab6a-7bc1-44f5-92fd-7105968e2ee3</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(15)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Immerse</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>26ba995b-8319-4f48-84d7-a1c80a6fbd79</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(16)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Red</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>7d33dcfc-2404-477b-b044-6d5a04b2012c</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(17)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Purple</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+	<entry m:etag="&quot;1&quot;">
+		<id>51eeccac-d2a2-443d-a178-9ec0ca765244</id>
+		<category
+			term="SP.Data.OData__x005f_catalogs_x002f_designItem"
+			scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+		<link rel="edit"
+			href="Web/Lists(guid'bcc8566c-9b1a-494d-8fbc-943bdf50b62d')/Items(18)" />
+		<title />
+		<updated>2020-02-05T08:57:21Z</updated>
+		<author>
+			<name />
+		</author>
+		<content type="application/xml">
+			<m:properties>
+				<d:Title>Wood</d:Title>
+			</m:properties>
+		</content>
+	</entry>
+</feed>
