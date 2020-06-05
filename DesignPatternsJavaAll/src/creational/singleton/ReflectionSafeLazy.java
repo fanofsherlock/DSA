@@ -1,9 +1,8 @@
 package creational.singleton;
 
-
 public class ReflectionSafeLazy {
 
-	private static ReflectionSafeLazy instance;
+	private static volatile ReflectionSafeLazy instance;
 	private static Object lock = new Object();
 
 	private ReflectionSafeLazy() {
@@ -12,7 +11,7 @@ public class ReflectionSafeLazy {
 		}
 	}
 
-	static ReflectionSafeLazy getInstance() {
+	public static ReflectionSafeLazy getInstance() {
 		if (instance == null) {
 			synchronized (lock) {
 				if (instance == null) {

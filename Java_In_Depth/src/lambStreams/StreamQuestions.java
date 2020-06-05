@@ -16,7 +16,18 @@ import java.util.stream.Stream.Builder;
 /*
 https://www.geeksforgeeks.org/collectors-tomap-method-in-java-with-examples/
 
+Input: 
+List<Employee> -> 1 million  
 
+Streams:
+1) In-demand data structure
+2) Not a DS, it is a computation on ds
+
+3) Intermediate operations
+4) Terminal 
+
+
+-> List<Employee>, HR dept
 
 */
 

@@ -1,8 +1,8 @@
-package Fibo;
+package UnboundedKnapsack;
 
 import java.util.Arrays;
 
-public class CoinChange {
+public class MinimumCoinChange {
 
 	public int coinChange(int[] coins, int amount) {
 		if (coins == null || coins.length == 0 || amount == 0) {
@@ -65,7 +65,7 @@ public class CoinChange {
 	}
 
 	public static void main(String[] args) {
-		CoinChange c = new CoinChange();
+		MinimumCoinChange c = new MinimumCoinChange();
 		// System.out.println(c.coinChange(new int[] { 186, 419, 83, 408 }, 6249));
 		System.out.println(c.coinChange(new int[] { 1, 2, 5 }, 11));
 	}

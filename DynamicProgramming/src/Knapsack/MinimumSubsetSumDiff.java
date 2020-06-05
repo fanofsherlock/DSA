@@ -23,11 +23,9 @@ public class MinimumSubsetSumDiff {
 		}
 
 		// recursive call after including the number at the currentIndex in the first
-		// set
 		int diff1 = canPartitionRecursive(num, currentIndex + 1, sum1 + num[currentIndex], sum2, dp);
 
 		// recursive call after including the number at the currentIndex in the second
-		// set
 		int diff2 = canPartitionRecursive(num, currentIndex + 1, sum1, sum2 + num[currentIndex], dp);
 
 		dp[sum1][currentIndex] = Math.min(diff1, diff2);

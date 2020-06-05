@@ -47,7 +47,7 @@ public class EqualSubsetSumPartition {
 
 	public static void main(String[] args) {
 		EqualSubsetSumPartition eq = new EqualSubsetSumPartition();
-		int[] a = new int[] { 1, 2, 5 };
+		int[] a = new int[] { 1, 2, 5 ,10,3};
 		System.out.println(eq.canPartition(a));
 
 	}
