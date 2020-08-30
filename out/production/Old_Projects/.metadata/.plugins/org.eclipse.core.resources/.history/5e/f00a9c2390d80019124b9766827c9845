@@ -1,0 +1,50 @@
+package Collections;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.OptionalLong;
+import java.util.Random;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
+import java.util.stream.Stream;
+
+public class Streams {
+
+	public static void main(String[] args) {
+		
+		List<String> list = new ArrayList<String>();
+		System.out.println(list.stream().anyMatch(s->s.length()>1));
+		System.out.println(list.stream().allMatch(s->s.length()>1));
+		System.out.println(list.stream().noneMatch(s->s.length()>1));
+	
+		Stream<Double> stream = Stream.generate(() -> Double.parseDouble("1.0"));
+        System.out.println(stream.findFirst());
+        
+        Optional<Integer> optional = Optional.ofNullable(null);
+        System.out.println(optional.orElse(-1));
+        
+        Stream<Integer> testStream = Stream.of(10,0,-10);
+        System.out.println(testStream.findAny().get());
+     
+        
+        Stream<LocalDate> stream2 = Stream.of(LocalDate.of(2018, 1, 1), LocalDate.of(2018, 1, 1));
+        Optional<LocalDate> optional2 = stream2.distinct().findAny();
+        System.out.println(optional2.isPresent() + " : " + optional2.get());
+        
+        OptionalLong optional3 = OptionalLong.empty();
+        //System.out.println(optional3.isPresent() + " : " + optional3.getAsLong());
+        
+        IntStream stream4 = IntStream.generate(() -> new Random().nextInt(100)).limit(5);
+        stream4.filter(i -> i > 0 && i < 10).findFirst().ifPresent(System.out::println);;
+        
+        IntStream stream5 = new Random().ints(1, 7).limit(2);
+        System.out.println(stream5.max().getAsInt());
+        
+        IntStream.range(1, 10).forEach(System.out::println);
+        LongStream.iterate(0, i -> i + 2).limit(4).forEach(System.out::print);
+	}
+}

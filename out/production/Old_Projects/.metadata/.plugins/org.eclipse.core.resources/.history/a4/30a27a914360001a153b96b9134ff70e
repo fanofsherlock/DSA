@@ -1,0 +1,56 @@
+package impl;
+
+public class CTCI_ConstantMinOperation<T extends Comparable<T>> {
+
+	static class StackNode<T> {
+		T data;
+		StackNode<T> next;
+
+		public StackNode(T data) {
+			this.data = data;
+		}
+	}
+
+	StackNode<T> top;
+	StackNode<T> min;
+
+	void push(T data) {
+
+		StackNode<T> cur = new StackNode<>(data);
+		if (top == null) {
+			top = cur;
+			min = new StackNode<>(data);
+			return;
+		}
+
+		if (min.data.compareTo(cur.data) > 0) {
+			StackNode<T> node = new StackNode<>(cur.data);
+			node.next = min;
+			min = node;
+		}
+
+		cur.next = top;
+		top = cur;
+
+	}
+
+	StackNode<T> pop() {
+
+		if (top == null) {
+			throw new StackOverflowError("Stack is empty");
+		}
+
+		StackNode<T> cur = new StackNode<>(top.data);
+		top = top.next;
+
+		if (min.data.compareTo(cur.data) == 0) {
+			min=min.next;
+		}
+		return cur;
+	}
+
+	T min() {
+		return min.data;
+	}
+
+}

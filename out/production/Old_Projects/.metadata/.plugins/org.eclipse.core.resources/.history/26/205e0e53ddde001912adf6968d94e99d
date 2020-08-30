@@ -1,0 +1,23 @@
+package Array;
+
+import java.util.Stack;
+
+public class Leaders {
+     public static void main(String[] args) {
+		int[] arr = {16,14,17,5,4,3,2};
+		leaders(arr);
+	}
+
+	private static void leaders(int[] arr) {
+		Stack<Integer> s = new Stack<>();
+		
+		int max=0;
+		for(int i=arr.length-1;i>=0;i--) {
+			if(arr[i]>max) {
+				max=arr[i];
+				s.push(arr[i]);
+			}
+		}
+		
+	}
+}

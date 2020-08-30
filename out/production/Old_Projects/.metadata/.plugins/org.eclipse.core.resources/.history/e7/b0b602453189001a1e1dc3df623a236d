@@ -1,0 +1,14 @@
+package test;
+
+package VendingMachineTest;
+
+import VendingMachineTest.Test;
+
+public class VendingMachineTest {
+
+	@Test
+	void doSomething() {
+
+	}
+
+}

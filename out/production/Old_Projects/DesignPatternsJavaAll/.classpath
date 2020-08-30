@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Lib"/>
+	<classpathentry kind="lib" path="C:/JavaDesignPatterns/lib/commons-lang3-3.7.jar"/>
+	<classpathentry kind="lib" path="C:/JavaDesignPatterns/lib/commons-text-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/703248398/Downloads/javafx-graphics-13.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/703248398/Downloads/javafx-base-12.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

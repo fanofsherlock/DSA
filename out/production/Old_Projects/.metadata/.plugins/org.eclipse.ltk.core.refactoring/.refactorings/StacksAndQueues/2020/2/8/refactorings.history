@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;multiStacks.TwoStacks&apos; to &apos;SortOneUsingSecondStack&apos;&#x0D;&#x0A;- Original project: &apos;StacksAndQueues&apos;&#x0D;&#x0A;- Original element: &apos;multiStacks.TwoStacks&apos;&#x0D;&#x0A;- Renamed element: &apos;multiStacks.SortOneUsingSecondStack&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TwoStacks&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;multiStacks{TwoStacks.java[TwoStacks" matchStrategy="1" name="SortOneUsingSecondStack" qualified="false" references="true" similarDeclarations="false" stamp="1582189847935" textual="false" version="1.0"/>
+</session>

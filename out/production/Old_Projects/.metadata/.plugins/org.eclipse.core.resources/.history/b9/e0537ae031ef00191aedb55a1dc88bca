@@ -1,0 +1,17 @@
+package bfs;
+
+public class test {
+
+	
+	public static void main(String[] args) {
+		Node n = new Node(20);
+		Tree t = new Tree(n);
+		
+		  t.add(t.getRoot(), new Node(4));
+		  t.add(t.getRoot(), new Node(50));
+		  t.add(t.getRoot(), new Node(16));
+		  t.add(t.getRoot(), new Node(44));
+		  //t.InOrderTraversal(t.getRoot());
+		  t.LevelOrderTraversal(t.getRoot());
+	}
+}

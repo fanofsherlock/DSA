@@ -2,27 +2,28 @@ package Fibonachi;
 
 public class MaxSumOfNonAdjacent {
 
-	 static int maxSubsetSum2(int[] arr) {
-	      if(arr ==null||arr.length==0){
-	          return 0;
-	      }
+	static int maxSubsetSum2(int[] arr) {
+		if (arr == null || arr.length == 0) {
+			return 0;
+		}
 
-	      if(arr.length==1){
-	          return arr[0];
-	      }
-	      Integer[] dp = new Integer[arr.length];
-	      dp[0]=arr[0];
-	      dp[1]=Math.max(arr[0],arr[1]);
+		if (arr.length == 1) {
+			return arr[0];
+		}
+		Integer[] dp = new Integer[arr.length];
+		dp[0] = arr[0];
+		dp[1] = Math.max(arr[0], arr[1]);
 
-	      for(int i=2;i<arr.length;i++){
-	         dp[i]=Math.max(arr[i],Math.max(arr[i]+dp[i-2],dp[i-1]));
-	      }
+		for (int i = 2; i < arr.length; i++) {
+			dp[i] = Math.max(arr[i], Math.max(arr[i] + dp[i - 2], dp[i - 1]));
+		}
 
-	      return dp[arr.length-1];
-	    }
-	 
-	 
-	   static int maxSubsetSum(int[] arr) {
+		return dp[arr.length - 1];
+	}
+
+	
+	
+	static int maxSubsetSum(int[] arr) {
 		if (arr == null || arr.length == 0) {
 			return 0;
 		}

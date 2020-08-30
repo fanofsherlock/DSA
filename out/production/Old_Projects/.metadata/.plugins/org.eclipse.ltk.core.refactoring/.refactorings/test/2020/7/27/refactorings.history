@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;MicroserviceAuthentication.Quolum1&apos; to &apos;QuolumWebServer&apos;&#x0D;&#x0A;- Original project: &apos;Test&apos;&#x0D;&#x0A;- Original element: &apos;MicroserviceAuthentication.Quolum1&apos;&#x0D;&#x0A;- Renamed element: &apos;MicroserviceAuthentication.QuolumWebServer&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Quolum1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;MicroserviceAuthentication{Quolum1.java[Quolum1" matchStrategy="1" name="QuolumWebServer" qualified="false" references="true" similarDeclarations="false" stamp="1593774395539" textual="false" version="1.0"/>
+</session>

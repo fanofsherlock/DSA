@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.5.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.nissan.rpa</groupId>
+	<artifactId>nissanaggregator</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<jackson.library>2.7.5</jackson.library>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<start-class>com.nissan.configuration.AutomationConfigurationMain</start-class>
+	</properties>
+
+	<modules>
+		<module>core</module>
+		<module>assessment</module>
+		<module>jira</module>
+		<module>orchestrator</module>
+		<module>servicenow</module>
+		<module>web</module>
+	</modules>
+
+</project>

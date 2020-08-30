@@ -1,0 +1,18 @@
+package BigIntegers;
+
+public class BigBinaryNumber {
+
+	public static void main(String[] args) {
+		System.out.println(FindBigBinary(3L));
+	}
+
+	private static String FindBigBinary(long n) {
+
+		for (long i = 1; i <= n; i++) {
+
+		}
+		
+		return null;
+	}
+
+}

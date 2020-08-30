@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;impl.TrieNode&apos; to &apos;TrieNode2&apos;&#x0D;&#x0A;- Original project: &apos;Trie&apos;&#x0D;&#x0A;- Original element: &apos;impl.TrieNode&apos;&#x0D;&#x0A;- Renamed element: &apos;impl.TrieNode2&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TrieNode&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;impl{Trie2.java[TrieNode" matchStrategy="1" name="TrieNode2" qualified="false" references="true" similarDeclarations="false" stamp="1582802963430" textual="false" version="1.0"/>
+</session>

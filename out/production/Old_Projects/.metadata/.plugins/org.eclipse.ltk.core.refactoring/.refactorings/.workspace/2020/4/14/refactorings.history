@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JavaInDepth&apos; to &apos;Java_In_Depth&apos;" description="Rename resource &apos;JavaInDepth&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/JavaInDepth" name="Java_In_Depth" stamp="1585703958518" updateReferences="true"/>
+</session>

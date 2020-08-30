@@ -1,0 +1,19 @@
+package test;
+
+public class EmployeeTest {
+
+	public static void main(String[] args){
+			  Employee emp1 = new Employee("Sheetal"); 
+			  printNumber(x);
+			  sysout(emp1.toString()); -> "xyz"
+			  
+			  int[] ref1 = new int[]{1,78,123,4369};
+			  getCountOfAllEvenDigitsNumber(ref1);
+			}
+
+	printNumber(Employee emp){
+			  emp = new Employee("Ashish");
+			  emp.setName("xyz");
+			 }
+
+}

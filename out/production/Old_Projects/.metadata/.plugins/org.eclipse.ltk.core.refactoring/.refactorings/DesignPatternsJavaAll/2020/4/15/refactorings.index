@@ -1,0 +1,11 @@
+1586126603510	Rename type 'BillPoughReflectionCloneSafe'
+1586130006826	Rename type 'Builder_NutritionFacts'
+1586130020022	Rename type 'Builder'
+1586130716345	Rename type 'SerializationSafe'
+1586159083438	Delete element
+1586187599870	Rename local variable 'factName'
+1586581968368	Rename type 'UsingJava'
+1586593629517	Rename type 'RuntimeMethodInvocator'
+1586627412651	Rename local variable 'freq'
+1586628550629	Delete element
+1586632808230	Rename package 'structual.bridge'

@@ -1,0 +1,38 @@
+1588535044879	Delete element
+1588535187422	Delete element
+1588535195963	Rename type 'BowlType'
+1588536798809	Rename field 'playersCurrentlyPlaying'
+1588538144037	Rename method 'incrementRunsScore'
+1588538460074	Delete element
+1588540920289	Rename type 'InningStatus'
+1588581247783	Rename field 'location'
+1588581270289	Rename type 'LockerSystemTest'
+1588581286254	Rename type 'Test'
+1588581526409	Rename method 'insertPackage'
+1588599249484	Rename type 'LockerNotAvailableException'
+1588599774199	Rename method 'assignLocker'
+1588628099031	Rename type 'Kinght'
+1588628814708	Delete element
+1588628820232	Delete element
+1588628825811	Delete element
+1588628833417	Delete element
+1588628838992	Delete element
+1588628844207	Delete element
+1588629141117	Delete element
+1588663577580	Rename type 'MembershipFines'
+1588663617454	Rename type 'BorrowedBooksManagement'
+1588663672693	Rename type 'MembershipExtension'
+1588664148427	Rename type 'Membership'
+1588664955651	Rename field 'returnTimeInSeconds'
+1588664974692	Rename local variable 'returnTimeInSeconds'
+1588678653511	Rename method 'checkMembership'
+1588678783761	Rename method 'searchForBook'
+1588683937600	Rename field 'iRd'
+1588683941909	Rename field 'parking_lot_Rd'
+1588685641855	Rename type 'LevelInventory'
+1588685779041	Rename type 'VehicleRegistry'
+1588867053343	Rename type 'CoffeeType'
+1588929091981	Rename type 'Commenet'
+1588929168292	Rename type 'Filter'
+1588931556462	Rename type 'CommentFilteringTest'
+1588931860381	Delete element

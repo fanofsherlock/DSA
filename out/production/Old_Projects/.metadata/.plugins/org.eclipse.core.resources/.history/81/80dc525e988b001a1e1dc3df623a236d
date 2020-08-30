@@ -1,0 +1,24 @@
+package BigIntegers;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+public class BigBinaryNumber {
+
+	public static void main(String[] args) {
+		System.out.println(FindBigBinary(3L));
+	}
+
+	private static String FindBigBinary(long n) {
+
+		StringBuilder sb = new StringBuilder();
+		
+		for (long i = 1; i <= n; i++) {
+         sb.append(Long.toBinaryString(i));
+		}
+
+		String finalNumber = sb.toString();
+		return null;
+	}
+
+}

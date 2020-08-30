@@ -1,0 +1,21 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title> </title></head><body>
+<p>Requirements:</p>
+<p>1) Input from commandLine about piece to move</p>
+<p>2) Display the board</p>
+<p>&nbsp;</p>
+<p>Actor:</p>
+<p>1) Players</p>
+<p>&nbsp;</p>
+<p>UseCase:</p>
+<p>1) Players taking turn to move pieces</p>
+<p>&nbsp;</p>
+<p>Design:</p>
+<p>1) ChessBoard class implementing Board interface</p>
+<p>2) ChessBoard will have a mtrix of Square class</p>
+<p>3) Square class will have reference to Piece class</p>
+<p>4) Piece interface -&gt; all chess pieces will implement it</p>
+<p>5) Player interface -&gt; Players_Concrete</p>
+<p>6) Game class -&gt; Board and Players and History of Moves (Builder pattern) (Memento Pattern)</p>
+<p>7) GameOrchestrator -&gt; Reference to Game (SingleTon)</p>
+<p>8) Move class</p>
+</body></html>

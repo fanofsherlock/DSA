@@ -1,0 +1,14 @@
+package test;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+public class VendingMachineTest {
+
+	@Test
+	void doSomething() {
+     assertEquals("1.0", "1.0");
+	}
+
+}

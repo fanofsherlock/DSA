@@ -30,12 +30,63 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d837f045-157d-440f-8467-d58821070874" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Old_Projects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arrays/src/Sorting/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Arrays/src/Sorting/BubbleSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arrays/src/Sorting/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Arrays/src/Sorting/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiThreading/src/DataStructure/BlockingQueueSemaphore.java" beforeDir="false" afterPath="$PROJECT_DIR$/MultiThreading/src/DataStructure/BlockingQueueSemaphore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiThreading/src/ThreadPools/PoolThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/MultiThreading/src/ThreadPools/PoolThread.java" afterDir="false" />
+    <list default="true" id="d837f045-157d-440f-8467-d58821070874" name="Default Changelist" comment="new files">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Arrays/src/Array/BuyAndSellStock4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/bin/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessMain/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessMain/ChessBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessMain/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessMain/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessMain/Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessMain/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessMain/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/Bishop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/King.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/Pawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/PieceColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/PieceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/chessPieces/Rook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChessDesign/src/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DynamicProgramming/src/Knapsack/CoinsandEnergy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DynamicProgramming/src/PalindromicSubseq/LongestPalindromicSubseq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StacksAndQueues/src/NextGrtOrSmaller/LC503_NGE_Circular.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StringsProbs/src/Math/LC415_AddStrings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/MicroserviceAuthentication/BST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/MicroserviceAuthentication/CentralMicroservice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/MicroserviceAuthentication/QuolumWebServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/MicroserviceAuthentication/QuolumWebServer2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/cars24/CycleInaLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/cars24/TestImmutableClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/cars24/algo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/cars24/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/.settings/org.eclipse.m2e.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/src/main/java/com/group/com/artifact/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/src/main/java/com/group/com/artifact/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/src/test/java/com/group/com/artifact/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/target/classes/META-INF/maven/com.group/com.artifact/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.artifact/target/classes/META-INF/maven/com.group/com.artifact/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Old_Projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Old_Projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynamicProgramming/src/Fibonachi/MaxSumOfNonAdjacent.java" beforeDir="false" afterPath="$PROJECT_DIR$/DynamicProgramming/src/Fibonachi/MaxSumOfNonAdjacent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OO_Designs/bin/ParkingLotDesign/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/OO_Designs/bin/ParkingLotDesign/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OO_Designs/src/ParkingLotDesign/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/OO_Designs/src/ParkingLotDesign/Level.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +95,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="w1m812s2" />
   </component>
   <component name="ProjectId" id="1cKm0pgGRuIXfFzb21mC2I6xx3d" />
   <component name="ProjectLevelVcsManager">
@@ -55,9 +109,41 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+  </component>
+  <component name="RunManager" selected="Application.AreConsecutive">
+    <configuration name="AreConsecutive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Array.AreConsecutive" />
+      <module name="Old_Projects" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Array.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Java Scratch">
+      <module name="Old_Projects" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AreConsecutive" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -82,22 +168,70 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="new files" />
+    <option name="LAST_COMMIT_MESSAGE" value="new files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1590285507867">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1590285507867" />
-    <state x="463" y="81" key="FileChooserDialogImpl" timestamp="1590285585889">
+    <state x="-1480" y="-210" key="#Project_Structure" timestamp="1598286214543">
+      <screen x="-1920" y="-304" width="1920" height="1040" />
+    </state>
+    <state x="-1480" y="-210" key="#Project_Structure/0.0.1366.728/-1920.-304.1920.1040@-1920.-304.1920.1040" timestamp="1598286214543" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598280771909">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/-1920.-304.1920.1040@0.0.1366.728" timestamp="1598280771909" />
+    <state x="406" y="53" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598279833383">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="406" y="53" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728/-1920.-304.1920.1040@0.0.1366.728" timestamp="1598279833383" />
+    <state x="-1269" y="-188" key="FileChooserDialogImpl" timestamp="1598286212233">
+      <screen x="-1920" y="-304" width="1920" height="1040" />
+    </state>
+    <state x="-1269" y="-188" key="FileChooserDialogImpl/0.0.1366.728/-1920.-304.1920.1040@-1920.-304.1920.1040" timestamp="1598286212233" />
     <state x="463" y="81" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590285585889" />
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom" timestamp="1598280781672">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728/-1920.-304.1920.1040@0.0.1366.728" timestamp="1598280781672" />
+    <state width="1286" height="163" key="GridCell.Tab.0.center" timestamp="1598280781672">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="163" key="GridCell.Tab.0.center/0.0.1366.728/-1920.-304.1920.1040@0.0.1366.728" timestamp="1598280781672" />
+    <state width="1286" height="163" key="GridCell.Tab.0.left" timestamp="1598280781672">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="163" key="GridCell.Tab.0.left/0.0.1366.728/-1920.-304.1920.1040@0.0.1366.728" timestamp="1598280781672" />
+    <state width="1286" height="163" key="GridCell.Tab.0.right" timestamp="1598280781672">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="163" key="GridCell.Tab.0.right/0.0.1366.728/-1920.-304.1920.1040@0.0.1366.728" timestamp="1598280781672" />
     <state x="348" y="68" key="NewModule_or_Project.wizard" timestamp="1590285618103">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="348" y="68" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1590285618103" />
+    <state x="-1661" y="-291" key="SettingsEditor" timestamp="1598286376599">
+      <screen x="-1920" y="-304" width="1920" height="1040" />
+    </state>
+    <state x="-1661" y="-291" key="SettingsEditor/0.0.1366.728/-1920.-304.1920.1040@-1920.-304.1920.1040" timestamp="1598286376599" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728/-1920.-304.1920.1040@0.0.1366.728" timestamp="1598280215181" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Arrays/src/Array/AreConsecutive.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

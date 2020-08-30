@@ -1,0 +1,36 @@
+package impl;
+
+public class CTCI_ConstantMinOperation<T> {
+
+	static class StackNode<T> {
+		T data;
+		StackNode<T> next;
+
+		public StackNode(T data) {
+			this.data = data;
+		}
+	}
+
+	StackNode<T> top;
+	T min;
+
+	void push(T data) {
+		
+	  StackNode<T> cur = new StackNode<>(data);	
+		if (top == null) {
+			top = cur;
+			
+		}
+		
+		
+	}
+
+	StackNode<T> pop() {
+		return null;
+	}
+
+	T min() {
+		return min;
+	}
+
+}

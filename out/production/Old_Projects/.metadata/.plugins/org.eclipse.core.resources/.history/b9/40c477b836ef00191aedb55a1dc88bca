@@ -1,0 +1,80 @@
+package bfs;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Tree {
+
+	Node root;
+	static int leftNodes = 0;
+	static int rightNodes = 0;
+	Queue<Node> que = new LinkedList<Node>();
+
+	public Tree(Node root) {
+		this.root = root;
+	}
+
+	void InOrderTraversal(Node root1) {
+		if (root1 == null)
+			return;
+
+		if (root1.left != null) {
+			InOrderTraversal(root1.left);
+		}
+
+		System.out.println(root1.data + " ");
+
+		if (root1.right != null) {
+			InOrderTraversal(root1.right);
+		}
+	}
+
+	void LevelOrderTraversal(Node root2) {
+		if (root2 == null)
+			return;
+		que.add(root2);
+
+		while (!que.isEmpty()) {
+			Node x = que.remove();
+			System.out.println(x.data);
+
+			if (x.left != null) {
+				que.add(x.left);
+			}
+			if (x.right != null) {
+				que.add(x.right);
+			}
+		}
+
+	}
+
+	boolean add(Node root1, Node node) {
+		if (root1 == null || node == null || root1.data == node.data)
+			return false;
+
+		if (root1.left == null) {
+			root1.left = node;
+			return true;
+		}
+
+		if (root1.right == null) {
+
+			root1.right = node;
+			return true;
+		}
+
+		if (leftNodes < rightNodes) {
+			leftNodes++;
+			return add(root1.left, node);
+		} else {
+			rightNodes++;
+			return add(root1.right, node);
+		}
+
+	}
+
+	public Node getRoot() {
+		return root;
+	}
+
+}

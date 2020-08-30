@@ -1,0 +1,131 @@
+package Misc;
+
+import java.util.ArrayList;
+
+public class Ibit_ContainerWithMostWater {
+	class Wall {
+		int index;
+		int value;
+
+		Wall(int index, int value) {
+			this.index = index;
+			this.value = value;
+		}
+		
+		@Override
+		public String toString() {
+			return value+"";
+		}
+	}
+
+	public int maxArea(ArrayList<Integer> A) {
+		if (A == null || A.size() < 3) {
+			return 0;
+		}
+		Wall[] leftMax = new Wall[A.size()];
+		leftMax[0] = new Wall(0,-1);
+
+		int maxHeight = A.get(0);
+		int maxIndex = 0;
+
+		for (int i = 1; i < A.size(); i++) {
+			if (maxHeight < A.get(i)) {
+				leftMax[i] = new Wall(maxIndex, maxHeight);
+				maxIndex = i;
+				maxHeight = A.get(i);
+				continue;
+			}
+
+			leftMax[i] = new Wall(maxIndex, maxHeight);
+		}
+
+		Wall[] rightMax = new Wall[A.size()];
+		rightMax[A.size() - 1] = new Wall(0,-1);
+		maxHeight = A.get(A.size() - 1);
+		maxIndex = A.size() - 1;
+
+		for (int i = A.size() - 2; i >= 0; i--) {
+			if (maxHeight < A.get(i)) {
+				rightMax[i] = new Wall(maxIndex, maxHeight);
+				maxIndex = i;
+				maxHeight = A.get(i);
+				continue;
+			}
+
+			rightMax[i] = new Wall(maxIndex, maxHeight);
+		}
+		
+		
+
+		long maxArea = Integer.MIN_VALUE;
+		int base = 0;
+		for (int i = 1; i < A.size() - 1; i++) {
+			maxHeight = Math.min(leftMax[i].value, rightMax[i].value);
+			base = rightMax[i].index - leftMax[i].index;
+			maxArea = Math.max(maxArea, maxHeight * base);
+		}
+
+		return (int)maxArea;
+	}
+	
+	 public int maxArea(int[] A) {
+	        if (A == null || A.length<2) {
+				return 0;
+			}
+			Wall[] leftMax = new Wall[A.length];
+			leftMax[0] = new Wall(0,A[0]);
+
+			int maxHeight = A[0];
+			int maxIndex = 0;
+
+			for (int i = 1; i < A.length; i++) {
+				if (maxHeight < A[i]) {
+					leftMax[i] = new Wall(maxIndex, maxHeight);
+					maxIndex = i;
+					maxHeight = A[i];
+					continue;
+				}
+
+				leftMax[i] = new Wall(maxIndex, maxHeight);
+			}
+
+			Wall[] rightMax = new Wall[A.length];
+			rightMax[A.length - 1] = new Wall(A.length - 1,A[A.length - 1]);
+			maxHeight = A[A.length - 1];
+			maxIndex = A.length - 1;
+
+			for (int i = A.length - 2; i >= 0; i--) {
+				if (maxHeight < A[i]) {
+					rightMax[i] = new Wall(maxIndex, maxHeight);
+					maxIndex = i;
+					maxHeight = A[i];
+					continue;
+				}
+
+				rightMax[i] = new Wall(maxIndex, maxHeight);
+			}
+			
+			
+
+			long maxArea = Integer.MIN_VALUE;
+			int base = 0;
+			for (int i = 0; i < A.length; i++) {
+				maxHeight = Math.min(leftMax[i].value, rightMax[i].value);
+				base = rightMax[i].index - leftMax[i].index;
+				maxArea = Math.max(maxArea, maxHeight * base);
+			}
+
+			return (int)maxArea;
+	    }
+	
+	public static void main(String[] args) {
+		Ibit_ContainerWithMostWater i = new Ibit_ContainerWithMostWater();
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		a.add(1);
+		a.add(5);
+		a.add(4);
+		a.add(3);
+		int[] arr = new int[] {1,1};
+		System.out.println(i.maxArea(arr));
+	}
+}

@@ -1,0 +1,17 @@
+package test;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+		Employee emp1 = new Employee("Sheetal");
+		printNumber(emp1);
+		System.out.println((emp1.toString());
+	}
+
+
+
+static void 	printNumber(Employee emp){
+	  emp = new Employee("Ashish");
+	  emp.setName("xyz");
+	 }
+}

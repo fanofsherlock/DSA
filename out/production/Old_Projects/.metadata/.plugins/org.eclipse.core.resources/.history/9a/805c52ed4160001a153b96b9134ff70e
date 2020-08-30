@@ -1,0 +1,49 @@
+package impl;
+
+public class CTCI_ConstantMinOperation<T> {
+
+	static class StackNode<T> {
+		T data;
+		StackNode<T> next;
+
+		public StackNode(T data) {
+			this.data = data;
+		}
+	}
+
+	StackNode<T> top;
+	T min;
+
+	void push(T data) {
+
+		StackNode<T> cur = new StackNode<>(data);
+		if (top == null) {
+			top = cur;
+			min = cur.data;
+			return;
+		}
+
+		if(min>cur.data) {
+			
+		}
+		cur.next = top;
+		top = cur;
+
+	}
+
+	StackNode<T> pop() {
+
+		if (top == null) {
+			throw new StackOverflowError("Stack is empty");
+		}
+
+		StackNode<T> cur = new StackNode<>(top.data);
+		top = top.next;
+		return cur;
+	}
+
+	T min() {
+		return min;
+	}
+
+}

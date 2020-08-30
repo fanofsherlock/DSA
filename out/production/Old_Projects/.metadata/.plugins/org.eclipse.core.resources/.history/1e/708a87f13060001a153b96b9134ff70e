@@ -1,0 +1,14 @@
+package impl;
+
+public class CTCI_ConstantMinOperation<T> {
+
+	static class StackNode<T> {
+		T data;
+		StackNode<T> next;
+
+		public StackNode(T data) {
+			this.data = data;
+		}
+	}
+
+}

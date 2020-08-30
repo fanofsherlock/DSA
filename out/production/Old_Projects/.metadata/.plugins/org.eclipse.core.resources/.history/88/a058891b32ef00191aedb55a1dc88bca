@@ -1,0 +1,11 @@
+package bfs;
+
+public class test {
+
+	
+	public static void main(String[] args) {
+		Node n = new Node(20);
+		Tree t = new Tree(n);
+		
+	}
+}

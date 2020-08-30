@@ -1,0 +1,26 @@
+package Collections;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public class Streams {
+
+	public static void main(String[] args) {
+		
+		List<String> list = new ArrayList<String>();
+		System.out.println(list.stream().anyMatch(s->s.length()>1));
+		System.out.println(list.stream().allMatch(s->s.length()>1));
+		System.out.println(list.stream().noneMatch(s->s.length()>1));
+	
+		Stream<Double> stream = Stream.generate(() -> Double.parseDouble("1.0"));
+        System.out.println(stream.findFirst());
+        
+        Optional<Integer> optional = Optional.ofNullable(null);
+        System.out.println(optional);
+     
+	}
+}

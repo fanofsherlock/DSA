@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;dynamicProg.KnaFpsack&apos; to &apos;GFG_1Knapsack&apos;&#x0D;&#x0A;- Original project: &apos;interviewBit&apos;&#x0D;&#x0A;- Original element: &apos;dynamicProg.KnaFpsack&apos;&#x0D;&#x0A;- Renamed element: &apos;dynamicProg.GFG_1Knapsack&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;KnaFpsack&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;dynamicProg{Knapsack.java[KnaFpsack" matchStrategy="1" name="GFG_1Knapsack" qualified="false" references="true" similarDeclarations="false" stamp="1569151555548" textual="false" version="1.0"/>
+</session>

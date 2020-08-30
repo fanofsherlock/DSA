@@ -1,0 +1,12 @@
+1590278612315	Rename type 'APILimiterController'
+1590280117170	Rename type 'RateLimiterConfiguration'
+1590283331676	Rename type 'UserApiModel'
+1590286421843	Rename field 'limiters'
+1590289119425	Rename method 'isAccessAllowed'
+1590324916658	Rename type 'RateLimiterInterceptor'
+1590324971924	Rename type 'UserApiAccessMap'
+1590326851584	Rename type 'UserApiConcurBasedAccessMap'
+1590326862919	Rename type 'UserApiTimeBasedAccessMap'
+1590328325011	Rename field 'UNREGISTEREDD_CONCUR_PERMIT'
+1590328427333	Rename field 'UNREGISTERED_TIME_PERMIT'
+1590683472901	Delete element

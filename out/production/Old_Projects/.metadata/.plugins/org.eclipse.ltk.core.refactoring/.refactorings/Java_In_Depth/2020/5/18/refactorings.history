@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Inheritance.OverridingMethods&apos; to &apos;FinalMethods&apos;&#x0D;&#x0A;- Original project: &apos;Java_In_Depth&apos;&#x0D;&#x0A;- Original element: &apos;Inheritance.OverridingMethods&apos;&#x0D;&#x0A;- Renamed element: &apos;Inheritance.FinalMethods&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;OverridingMethods&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Inheritance{OverridingMethods.java[OverridingMethods" matchStrategy="1" name="FinalMethods" qualified="false" references="true" similarDeclarations="false" stamp="1588327993759" textual="false" version="1.0"/>
+</session>

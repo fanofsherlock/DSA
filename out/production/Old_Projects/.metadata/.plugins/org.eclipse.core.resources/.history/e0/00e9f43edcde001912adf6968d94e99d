@@ -1,0 +1,13 @@
+package Array;
+
+public class Leaders {
+     public static void main(String[] args) {
+		int[] arr = {16,14,17,5,4,3,2};
+		leaders(arr);
+	}
+
+	private static void leaders(int[] arr) {
+		
+		
+	}
+}
